@@ -1,7 +1,9 @@
 import "../css/index.css";
 import minute from "../assets/char/miss_minute.png";
 import { useState, useEffect, useRef } from "react";
-function Header() {
+
+
+function Header(props) {
   const [hide, setHide] = useState(false);
   const [complete, setComplete] = useState(false);
   const slide = "slide";
@@ -55,6 +57,8 @@ function Header() {
     };
   }, []);
 
+
+
   return (
     <header>
       <h1>MCU Timeline</h1>
@@ -64,13 +68,13 @@ function Header() {
         </button>
         {hide && (
           <div id="option">
-            <button type="button" className="option">
+            <button type="button" className="option" onClick={props.buttonMovie}>
               Movies
             </button>
-            <button type="button" className="option">
+            <button type="button" className="option" onClick={props.buttonShow}>
               TV-Shows
             </button>
-            <button type="button" className="option">
+            <button type="button" className="option" onClick={props.buttonAll}>
               All
             </button>
           </div>
