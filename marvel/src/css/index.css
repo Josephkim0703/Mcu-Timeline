@@ -15,16 +15,94 @@ body {
   z-index: -1;
 }
 
-header{
-  margin: 0;
+header {
+  margin: 15px;
   padding: 0;
   position: relative;
+  z-index: 10;
+  display: flex;
 }
 
-header h1{
+header h1 {
   font-family: "marvel";
   color: white;
-  margin: 10px;
-  font-size: 2.5rem;
+  font-size: 3rem;
+  margin: 0;
 }
 
+#main_button {
+  background-color: transparent;
+  border: none;
+  border-radius: 100%;
+  z-index: 1;
+  padding: 0;
+}
+
+
+
+header img {
+  width: 4rem;
+  border-radius: 100%;
+  transition: box-shadow 0.2s ease-out;
+}
+
+#option {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  right: 0;
+  top: 17px;
+  z-index: -1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.option {
+  margin: 0px 5px;
+  font-family: "marvel";
+  font-size: 1.5rem;
+  width: 7rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+#slider {
+  width: 4rem;
+  height: 4rem;
+  border: none;
+  right: 0;
+  top: 0;
+  position: absolute;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.option:hover {
+  background-color: white;
+}
+
+@keyframes slideIn {
+  from {
+    width: 4rem;
+  }
+  to {
+    width: 27rem;
+  }
+}
+
+.slide {
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+@keyframes slideOut {
+  from {
+    width: 27rem;
+  }
+  to {
+    width: 4rem;
+  }
+}
+
+.slideOut {
+  animation: slideOut 0.4s ease-out forwards;
+}

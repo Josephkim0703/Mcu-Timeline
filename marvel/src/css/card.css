@@ -14,12 +14,13 @@
 #card img{
     border: 1.5px solid black;
     border-radius: 0.4rem;
-    width: 6rem;
-    transition: border 0.5s ease-in-out;
+    width: 7rem;
+    height: 10rem;
+    transition: border 0.1s ease-in-out;
 }
 
 #card img:hover{
-    border: 1.5px solid rgb(238, 157, 157);
+    border: 1.5px solid rgb(255, 255, 255);
 }
 
 #timeline{
@@ -31,4 +32,6 @@
     transform: translate(-50%,-50%);
     z-index: 2;
 }
+
+
 
