@@ -5,28 +5,35 @@
 
 #card{
     z-index: 2;
+    display: flex;
+    flex-direction: row;
 }
 
 #card img{
-    border: 1.5px solid black;
+    border: 2px solid black;
     border-radius: 0.4rem;
-    width: 7rem;
+    width: 9rem;
     height: 10rem;
     transition: border 0.1s ease-in-out;
     margin: 5px 55px;
 }
 
 #card img:hover{
-    border: 1.5px solid rgb(255, 255, 255);
+    border: 2px solid rgb(255, 255, 255);
 }
 
 #timeline{
-    width: 560rem;
-    height: 100%;
+    width: 100%;
+    height: auto;
     position: absolute;
     top: 25%;
     left: 0;
     z-index: 2;
+    border: 5px solid white;
+}
+
+#timeline:hover{
+
 }
 
 #timeline > :nth-child(2){

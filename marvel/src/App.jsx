@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import "./css/index.css";
-import galaxy from "./assets/background/galaxy.jpg";
+import tva from "./assets/background/tva.jpg";
 import Card from "./util/Card.jsx";
 import Header from "./util/Header.jsx";
 import { marvel } from "./util/data.js";
 
 function App() {
-  const [background, setBackground] = useState(galaxy);
+  const [background, setBackground] = useState(tva);
 
   const [cards, setCards] = useState([]);
   const [cards2, setCards2] = useState([]);

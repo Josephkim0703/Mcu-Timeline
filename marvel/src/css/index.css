@@ -1,5 +1,5 @@
 body {
-  overflow-y: hidden;
+  overflow: hidden;
   margin: 0;
   padding: 0;
   cursor: grab;
@@ -40,7 +40,7 @@ header {
 header h1 {
   font-family: "marvel";
   color: white;
-  font-size: 3rem;
+  font-size: 3.6rem;
   margin: 0;
 }
 
@@ -53,7 +53,7 @@ header h1 {
 }
 
 header img {
-  width: 4rem;
+  width: 5rem;
   border-radius: 100%;
   transition: box-shadow 0.2s ease-out;
 }
@@ -63,7 +63,7 @@ header img {
   flex-direction: row;
   position: absolute;
   right: 0;
-  top: 17px;
+  top: 25px;
   z-index: -1;
   transition: opacity 0.2s ease-in-out;
 }
@@ -79,8 +79,8 @@ header img {
 }
 
 #slider {
-  width: 4rem;
-  height: 4rem;
+  width: 5rem;
+  height: 5rem;
   border: none;
   right: 0;
   top: 0;
@@ -95,10 +95,10 @@ header img {
 
 @keyframes slideIn {
   from {
-    width: 4rem;
+    width: 5rem;
   }
   to {
-    width: 27rem;
+    width: 28rem;
   }
 }
 
@@ -108,10 +108,10 @@ header img {
 
 @keyframes slideOut {
   from {
-    width: 27rem;
+    width: 28rem;
   }
   to {
-    width: 4rem;
+    width: 5rem;
   }
 }
 
