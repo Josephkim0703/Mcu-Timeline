@@ -98,6 +98,7 @@ const marvel = [
         date: "January 2016 – February 2016",
         image: carter2,
         type: "show",
+        time: "1947"
     },
     {
         name: "Captain Marvel",
