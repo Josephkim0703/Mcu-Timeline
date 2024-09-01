@@ -8,6 +8,7 @@ function Header() {
   const slideOut = "slideOut";
   const buttonRef = useRef(null);
 
+  //handle header option open and close
   function handleClick(e) {
     if (complete) {
       setComplete(false);
@@ -18,7 +19,7 @@ function Header() {
 
         setTimeout(() => {
           setHide(false);
-        }, 300);
+        }, 250);
       }, 0);
     } else {
       setHide(true);
@@ -31,16 +32,17 @@ function Header() {
     }
   }
 
+  //handle header close on outside click
   useEffect(() => {
     function handleClickOut(e) {
-      if (!e.target.closest("#main_button")) {
+      if (!e.target.closest("#main_button") && !e.target.closest(".option")) {
         setComplete(false);
         buttonRef.current.classList.add(slideOut);
 
         setTimeout(() => {
           setTimeout(() => {
             setHide(false);
-          }, 300);
+          }, 250);
           buttonRef.current.classList.remove(slide);
         }, 0);
       }

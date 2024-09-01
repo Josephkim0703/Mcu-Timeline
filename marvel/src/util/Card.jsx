@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "../css/card.css";
+import "../css/index.css";
 import { marvel } from "./data.js";
+
 function Card() {
   const [cards, setCards] = useState([]);
 
