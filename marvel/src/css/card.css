@@ -4,10 +4,6 @@
 }
 
 #card{
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
     z-index: 2;
 }
 
@@ -17,6 +13,7 @@
     width: 7rem;
     height: 10rem;
     transition: border 0.1s ease-in-out;
+    margin: 5px 55px;
 }
 
 #card img:hover{
@@ -24,14 +21,17 @@
 }
 
 #timeline{
-    width: 100%;
+    width: 560rem;
     height: 100%;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    top: 25%;
+    left: 0;
     z-index: 2;
 }
 
+#timeline > :nth-child(2){
+    margin-left: 75px;
+    margin-top: 10rem;
+}
 
 
