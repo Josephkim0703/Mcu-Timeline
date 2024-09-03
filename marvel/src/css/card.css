@@ -32,10 +32,6 @@
     border: 5px solid white;
 }
 
-#timeline:hover{
-
-}
-
 #timeline > :nth-child(2){
     margin-left: 95px;
     margin-top: 10rem;

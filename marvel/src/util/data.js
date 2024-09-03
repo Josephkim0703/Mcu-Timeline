@@ -78,7 +78,7 @@ import secret from '../assets/cards/secret_invasion.jpg';
 import echo from '../assets/cards/echo.jpg';
 import deadpool from '../assets/cards/deadpool.jpg';
 
-const marvel = [
+const marvel_CR = [
     {
         name: "Captain America: The First Avenger",
         date: "July 2011",
@@ -635,7 +635,7 @@ const marvel = [
     
     ];
 
-const marvel_ReleaseDate = [
+const marvel_RD = [
 {
     name: "Iron Man",
     date: "May 2008",
@@ -1107,4 +1107,4 @@ const marvel_ReleaseDate = [
 ];
 
 
-export {marvel};
+export {marvel_CR, marvel_RD};

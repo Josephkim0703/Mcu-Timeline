@@ -3,16 +3,28 @@ import "./css/index.css";
 import tva from "./assets/background/tva.jpg";
 import Card from "./util/Card.jsx";
 import Header from "./util/Header.jsx";
-import { marvel } from "./util/data.js";
+import Remote from "./util/Remote.jsx";
+import { marvel_CR, marvel_RD } from "./util/data.js";
 
 function App() {
   const [background, setBackground] = useState(tva);
 
   const [cards, setCards] = useState([]);
   const [cards2, setCards2] = useState([]);
+  const [hide, setHide] = useState(Array(5).fill(false));
 
-  function tvButton() {
-    const x = marvel
+  const [type, setType] = useState(marvel_CR);
+
+  function updateHide(index, value) {
+    setHide((prevHide) => {
+      const newHide = [...prevHide];
+      newHide[index] = value;
+      return newHide;
+    });
+  }
+
+  function ButtonTv() {
+    const x = type
       .filter((element) => element.type === "show")
       .map((element) => element.image);
     setCards(x);
@@ -23,8 +35,8 @@ function App() {
     setCards2(bottom);
   }
 
-  function movieButton() {
-    const x = marvel
+  function ButtonMovie() {
+    const x = type
       .filter((element) => element.type === "movie")
       .map((element) => element.image);
 
@@ -34,12 +46,12 @@ function App() {
     setCards2(bottom);
   }
 
-  function allButton() {
-    const x = marvel
+  function ButtonAll() {
+    const x = type
       .filter((_, index) => index % 2 === 0)
       .map((char) => char.image);
 
-    const y = marvel
+    const y = type
       .filter((_, index) => index % 2 === 1)
       .map((char) => char.image);
 
@@ -47,22 +59,40 @@ function App() {
     setCards2(y);
   }
 
+  function ButtonCR() {
+    setType(marvel_CR);
+    updateHide(0, true);
+  }
+ 
+  function ButtonRD() {
+    setType(marvel_RD);
+    updateHide(0, true);
+  }
+
   useEffect(() => {
-    allButton();
+    ButtonAll();
   }, []);
 
   return (
     <>
       <Header
-        buttonShow={tvButton}
-        buttonMovie={movieButton}
-        buttonAll={allButton}
+        buttonShow={ButtonTv}
+        buttonMovie={ButtonMovie}
+        buttonAll={ButtonAll}
       />
-      <div id="timeline">
-        <Card cards={cards} id="top_list"/>
-        <Card cards={cards2} id="bottom_list"/>
-      </div>
-      <img src={background} alt="" id="background" />
+      <main>
+
+        <Remote ButtonC={ButtonCR} ButtonR={ButtonRD}/>
+
+        {hide[0] && (
+          <div id="timeline">
+            <Card cards={cards} id="top_list" />
+            <Card cards={cards2} id="bottom_list" />
+          </div>
+        )}
+
+        <img src={background} alt="" id="background" />
+      </main>
     </>
   );
 }

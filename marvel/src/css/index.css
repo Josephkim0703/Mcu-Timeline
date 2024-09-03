@@ -58,6 +58,37 @@ header img {
   transition: box-shadow 0.2s ease-out;
 }
 
+#remoteControl {
+  position: absolute;
+  top: 80%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  border: 2px solid black;
+  width: 9rem;
+  height: 17rem;
+  border-radius: 20%;
+  background-color: #f5b561;
+  perspective: 23rem;
+  text-align: center;
+}
+
+#remoteControl button {
+  position: relative;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid black;
+  width: 7.5rem;
+  height: 5rem;
+  z-index: 1;
+  display: flex;
+  border-radius: 45%;
+  margin-top: 15px;
+}
+
+
+
 #option {
   display: flex;
   flex-direction: row;

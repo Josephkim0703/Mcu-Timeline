@@ -10,19 +10,23 @@ function Header(props) {
   const slideOut = "slideOut";
   const buttonRef = useRef(null);
 
+  function handleClose() {
+    setComplete(false);
+    buttonRef.current.classList.add(slideOut);
+
+    setTimeout(() => {
+      buttonRef.current.classList.remove(slide);
+
+      setTimeout(() => {
+        setHide(false);
+      }, 250);
+    }, 0);
+  }
+
   //handle header option open and close
   function handleClick(e) {
     if (complete) {
-      setComplete(false);
-      buttonRef.current.classList.add(slideOut);
-
-      setTimeout(() => {
-        buttonRef.current.classList.remove(slide);
-
-        setTimeout(() => {
-          setHide(false);
-        }, 250);
-      }, 0);
+      handleClose();
     } else {
       setHide(true);
       setComplete(true);
@@ -38,15 +42,7 @@ function Header(props) {
   useEffect(() => {
     function handleClickOut(e) {
       if (!e.target.closest("#main_button") && !e.target.closest(".option")) {
-        setComplete(false);
-        buttonRef.current.classList.add(slideOut);
-
-        setTimeout(() => {
-          setTimeout(() => {
-            setHide(false);
-          }, 250);
-          buttonRef.current.classList.remove(slide);
-        }, 0);
+        handleClose();
       }
     }
 
