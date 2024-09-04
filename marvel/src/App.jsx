@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./css/index.css";
 import tva from "./assets/background/tva.jpg";
 import Card from "./util/Card.jsx";
@@ -11,9 +11,12 @@ function App() {
 
   const [cards, setCards] = useState([]);
   const [cards2, setCards2] = useState([]);
+  const [type, setType] = useState([]);
+  
   const [hide, setHide] = useState(Array(5).fill(false));
 
-  const [type, setType] = useState(marvel_CR);
+
+
 
   function updateHide(index, value) {
     setHide((prevHide) => {
@@ -62,16 +65,18 @@ function App() {
   function ButtonCR() {
     setType(marvel_CR);
     updateHide(0, true);
+    console.log("CR");   
   }
  
   function ButtonRD() {
     setType(marvel_RD);
     updateHide(0, true);
+    console.log("RD");
   }
 
   useEffect(() => {
     ButtonAll();
-  }, []);
+  }, [type]);
 
   return (
     <>
