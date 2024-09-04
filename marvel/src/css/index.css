@@ -9,7 +9,8 @@ h1,
 h2,
 h3,
 p,
-a {
+a,
+img {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -17,6 +18,13 @@ a {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -webkit-user-drag: none;
+}
+
+button{
+  cursor: grabbing;
+  user-select: none;
+  outline: none;
 }
 
 #background {
@@ -27,6 +35,7 @@ a {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 0;
+
 }
 
 header {
@@ -70,21 +79,29 @@ header img {
   border-radius: 20%;
   background-color: #f5b561;
   perspective: 23rem;
-  text-align: center;
+}
+
+#remoteControl h1 {
+  font-size: 12px;
+  width: auto;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 #remoteControl button {
   position: relative;
-  top: 40%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   border: 1px solid black;
-  width: 7.5rem;
-  height: 5rem;
+  width: 7rem;
+  height: 4rem;
   z-index: 1;
   display: flex;
   border-radius: 45%;
   margin-top: 15px;
+  padding: 17px;
 }
 
 

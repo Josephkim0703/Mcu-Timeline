@@ -8,10 +8,10 @@ function Remote(props) {
     return (
     <div id="remoteControl">
       <button type="button" id="filterButton_C" onClick={props.ButtonC}>
-        Chronilogical
+        <h1>Chronilogical</h1>
       </button>
       <button type="button" id="filterButton_R" onClick={props.ButtonR}>
-        Release Date
+        <h1>Release Date</h1>
       </button>
 
       <img src="" alt="" />
