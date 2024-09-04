@@ -12,7 +12,7 @@ function App() {
   const [cards, setCards] = useState([]);
   const [cards2, setCards2] = useState([]);
   const [type, setType] = useState([]);
-  
+
   const [hide, setHide] = useState(Array(5).fill(false));
 
 

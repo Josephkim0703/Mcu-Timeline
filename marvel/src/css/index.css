@@ -19,10 +19,13 @@ img {
   -ms-user-select: none;
   user-select: none;
   -webkit-user-drag: none;
+  cursor: grab;
+  user-select: none;
+  outline: none;
 }
 
-button{
-  cursor: grabbing;
+button {
+  cursor: pointer;
   user-select: none;
   outline: none;
 }
@@ -35,7 +38,6 @@ button{
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 0;
-
 }
 
 header {
@@ -84,7 +86,7 @@ header img {
 #remoteControl h1 {
   font-size: 12px;
   width: auto;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -103,8 +105,6 @@ header img {
   margin-top: 15px;
   padding: 17px;
 }
-
-
 
 #option {
   display: flex;
