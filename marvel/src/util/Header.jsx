@@ -54,10 +54,9 @@ function Header(props) {
   }, []);
 
 
-
   return (
     <header>
-      <h1>MCU Timeline</h1>
+      <button type="button" id="refresh" onClick={props.refresh}><h1>MCU Timeline</h1></button>
       <div id="slider" ref={buttonRef}>
         <button type="button" id="main_button">
           <img src={minute} alt="" onClick={handleClick} />

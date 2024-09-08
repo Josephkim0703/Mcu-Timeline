@@ -12,8 +12,14 @@ function App() {
   const [cards, setCards] = useState([]);
   const [cards2, setCards2] = useState([]);
   const [type, setType] = useState([]);
-  const [time, setTime] = useState("date");
   const [hide, setHide] = useState(Array(5).fill(false));
+
+  function refresh() {
+    updateHide(0, false);
+    setType([]);
+    setCards([]);
+    setCards2([]);
+  }
 
   function updateHide(index, value) {
     setHide((prevHide) => {
@@ -79,7 +85,7 @@ function App() {
   }
 
   function ButtonCR() {
-    setType(marvel_T);
+    setType(marvel_T.sort((a, b) => a.timeline - b.timeline));
     updateHide(1, false);
     updateHide(2, true);
     updateHide(0, true);
@@ -122,6 +128,7 @@ function App() {
   return (
     <>
       <Header
+        refresh={refresh}
         buttonShow={ButtonTv}
         buttonMovie={ButtonMovie}
         buttonAll={ButtonAll}

@@ -81,6 +81,7 @@ import deadpool from '../assets/cards/deadpool.jpg';
 const marvel_T = [
     { 
         releaseDate : 5,
+        timeline: 1,
         name: "Captain America: The First Avenger",
         date: "July 2011",
         image: CaptainAmerica,
@@ -89,6 +90,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 13,
+        timeline: 2,
         name: "Agent Carter",
         date: "Jan 2015 – Feb 2015",
         image: carter,
@@ -97,6 +99,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 19, 
+        timeline: 3,
         name: "Agent Carter season 2 ",
         date: "Jan 2016 – Feb 2016",
         image: carter2,
@@ -105,6 +108,7 @@ const marvel_T = [
     },
     {
         releaseDate : 44,
+        timeline: 4,
         name: "Captain Marvel",
         date: "March 2019",
         image: CaptainMarvel,
@@ -113,6 +117,7 @@ const marvel_T = [
     },
     {
         releaseDate : 1,
+        timeline: 5,
         name: "Iron Man",
         date: "May 2008",
         image: ironMan,
@@ -121,6 +126,7 @@ const marvel_T = [
     },
     {   
         releaseDate : 3,
+        timeline: 6,
         name: "Iron Man 2",
         date: "April 2010",
         image: ironMan2,
@@ -129,6 +135,7 @@ const marvel_T = [
     }, 
     { 
         releaseDate : 4,
+        timeline: 7,
         name: "Thor",
         date: "April 2011",
         image: thor,
@@ -137,6 +144,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 2,
+        timeline: 8,
         name: "The Incredible Hulk",
         date: "June 2008",
         image: hulk,
@@ -145,6 +153,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 6,
+        timeline: 9,
         name: "The Avengers",
         date: "April 2012",
         image: avengers,
@@ -153,6 +162,7 @@ const marvel_T = [
     }
     ,{ 
         releaseDate : 7,
+        timeline: 10,
         name: "Iron Man 3",
         date: "April 2013",
         image: ironMan3,
@@ -161,6 +171,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 8,
+        timeline: 11,
         name: "Agents of SHIELD",
         date: "Sept 2013 – May 2014",
         image: shield,
@@ -169,6 +180,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 9,
+        timeline: 12,
         name: "Thor: The Dark World",
         date: "November 2013",
         image: thor2,
@@ -177,6 +189,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 10,
+        timeline: 13,
         name: "Captain America: The Winter Soldier",
         date: "March 2014",
         image: CaptainAmerica2,
@@ -185,6 +198,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 11,
+        timeline: 14,
         name: "Guardians of the Galaxy",
         date: "July 2014",
         image: gotg,
@@ -193,6 +207,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 26,
+        timeline: 15,
         name: "Guardians of the Galaxy Vol 2",
         date: "April 2017",
         image: gotg2,
@@ -201,6 +216,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 66,
+        timeline: 16,
         name: "I Am Groot",
         date: "August 2022",
         image: groot,
@@ -209,6 +225,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 74,
+        timeline: 17,
         name: "I Am Groot season 2",
         date: "September 2023",
         image: groot2,
@@ -217,6 +234,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 14,
+        timeline: 18,
         name: "Daredevil",
         date: "April 2015",
         image: dareDevil,
@@ -225,6 +243,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 18,
+        timeline: 19,
         name: "Jessica Jones",
         date: "November 2015",
         image: jones,
@@ -233,6 +252,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 12,
+        timeline: 20,
         name: "Agents of SHIELD season 2",
         date: "Sept 2014 – May 2015",
         image: shield2,
@@ -241,6 +261,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 15,
+        timeline: 21,
         name: "Avengers: Age of Ultron",
         date: "April 2015",
         image: avengers2,
@@ -249,6 +270,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 16,
+        timeline: 22,
         name: "Ant-Man",
         date: "July 2015",
         image: antman,
@@ -257,6 +279,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 20,
+        timeline: 23,
         name: "Daredevil season 2",
         date: "March 2016",
         image: dareDevil2,
@@ -265,6 +288,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 23,
+        timeline: 24,
         name: "Luke Cage",
         date: "September 2016",
         image: cage,
@@ -273,6 +297,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 25,
+        timeline: 25,
         name: "Iron Fist",
         date: "March 2017",
         image: iron,
@@ -281,6 +306,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 28,
+        timeline: 26,
         name: "The Defenders",
         date: "August 2017",
         image: defenders,
@@ -289,6 +315,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 17,
+        timeline: 27,
         name: "Agents of SHIELD season 3",
         date: "Sept 2015 – May 2016",
         image: shield3,
@@ -297,6 +324,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 21,
+        timeline: 28,
         name: "Captain America: Civil War ",
         date: "April 2016",
         image: CaptainAmerica3,
@@ -305,6 +333,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 56,
+        timeline: 29,
         name: "Black Widow",
         date: "July 2021",
         image: blackWidow,
@@ -313,6 +342,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 34,
+        timeline: 30,
         name: "Black Panther",
         date: "February 2018",
         image: blackPanther,
@@ -321,6 +351,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 29,
+        timeline: 31,
         name: "Inhumans",
         date: "Sept 2017 – Nov 2017",
         image: inhuman,
@@ -329,6 +360,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 27,
+        timeline: 32,
         name: "Spider-Man: Homecoming",
         date: "July 2017",
         image: spiderman,
@@ -337,6 +369,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 31,
+        timeline: 33,
         name: "The Punisher",
         date: "November 2017",
         image: punisher,
@@ -345,6 +378,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 24,
+        timeline: 34,
         name: "Doctor Strange",
         date: "October 2016",
         image: doctorStrange,
@@ -353,6 +387,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 37,
+        timeline: 35,
         name: "Cloak & Dagger",
         date: "June 2018 – Aug 2018",
         image: cad,
@@ -361,6 +396,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 22,
+        timeline: 36,
         name: "Agents of SHIELD season 4",
         date: "Sept 2016 – May 2017",
         image: shield4,
@@ -369,6 +405,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 35,
+        timeline: 37,
         name: "Jessica Jones season 2",
         date: "March 2018",
         image: jones2,
@@ -377,6 +414,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 38,
+        timeline: 38,
         name: "Luke Cage season 2",
         date: "June 2018",
         image: cage2,
@@ -385,6 +423,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 40,
+        timeline: 39,
         name: "Iron Fist season 2",
         date: "September 2018",
         image: iron2,
@@ -393,6 +432,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 41,
+        timeline: 40,
         name: "Daredevil season 3",
         date: "October 2018",
         image: dareDevil3,
@@ -401,6 +441,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 45,
+        timeline: 41,
         name: "Cloak & Dagger season 2",
         date: "Apr 2019 – May 2019",
         image: cad2,
@@ -409,6 +450,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 30,
+        timeline: 42,
         name: "Thor: Ragnarok",
         date: "October 2017",
         image: thor3,
@@ -417,6 +459,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 33,
+        timeline: 43,
         name: "Agents of SHIELD season 5",
         date: "Dec 2017 – May 2018",
         image: shield5,
@@ -425,6 +468,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 32,
+        timeline: 44,
         name: "Runaways",
         date: "Nov 2017 – Jan 2018",
         image: runaways,
@@ -433,6 +477,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 42,
+        timeline: 45,
         name: "Runaways season 2",
         date: "December 2018",
         image: runaways2,
@@ -441,6 +486,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 50,
+        timeline: 46,
         name: "Runaways season 3",
         date: "December 2019",
         image: runaways3,
@@ -449,6 +495,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 43,
+        timeline: 47,
         name: "The Punisher season 2",
         date: "January 2019",
         image: punisher2,
@@ -457,6 +504,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 52,
+        timeline: 48,
         name: "Helstrom",
         date: "October 2020",
         image: helstrom,
@@ -465,6 +513,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 48,
+        timeline: 49,
         name: "Jessica Jones season 3",
         date: "June 2019",
         image: jones3,
@@ -473,6 +522,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 39,
+        timeline: 50,
         name: "Ant-Man and the Wasp",
         date: "July 2018",
         image: antman2,
@@ -481,6 +531,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 36,
+        timeline: 51,
         name: "Avengers: Infinity War",
         date: "April 2018",
         image: avengers3,
@@ -489,6 +540,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 47,
+        timeline: 52,
         name: "Agents of SHIELD season 6",
         date: "May 2019 – Aug 2019",
         image: shield6,
@@ -497,6 +549,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 51,
+        timeline: 53,
         name: "Agents of SHIELD season 7",
         date: "May 2020 – Aug 2020",
         image: shield7,
@@ -505,6 +558,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 46,
+        timeline: 54,
         name: "Avengers: Endgame",
         date: "April 2019",
         image: avengers4,
@@ -513,6 +567,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 55,
+        timeline: 55,
         name: "Loki",
         date: "June 2021 – July 2021",
         image: loki,
@@ -520,7 +575,8 @@ const marvel_T = [
         time: "Time?"
     },
     { 
-        releaseDate : 75,
+        releaseDate : 75,   
+        timeline: 56,
         name: "Loki season 2",
         date: "Oct 2023 – Nov 2023",
         image: loki2,
@@ -529,6 +585,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 57,
+        timeline: 57,
         name: "What If...?",
         date: "Aug 2021 – Oct 2021",
         image: whatif,
@@ -537,6 +594,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 77,
+        timeline: 58,
         name: " What If...? season 2",
         date: "December 2023",
         image: whatif2,
@@ -545,6 +603,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 53,
+        timeline: 59,
         name: "WandaVision",
         date: "Jan 2021 – Mar 2021",
         image: wandavision,
@@ -553,6 +612,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 59,
+        timeline: 60,
         name: "Eternals",
         date: "November 2021",
         image: eternals,
@@ -561,6 +621,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 58,
+        timeline: 61,
         name: "Shang-Chi and the Legend of the Ten Rings",
         date: "September 2021",
         image: shangchi,
@@ -569,6 +630,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 54,
+        timeline: 62,
         name: "The Falcon and the Winter Soldier",
         date: "Mar 2021 – Apr 2021",
         image: falcon,
@@ -577,6 +639,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 79,
+        timeline: 63,
         name: "Deadpool & Wolverine",
         date: "July 2024",
         image: deadpool,
@@ -585,6 +648,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 49,
+        timeline: 64,
         name: "Spider-Man: Far From Home",
         date: "July 2019",
         image: spiderman2,
@@ -593,6 +657,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 61,
+        timeline: 65,
         name: "Spider-Man: No Way Home",
         date: "December 2021",
         image: spiderman3,
@@ -601,6 +666,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 63,
+        timeline: 66,
         name: "Doctor Strange in the Multiverse of Madness",
         date: "May 2022",
         image: doctorStrange2,
@@ -609,6 +675,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 60,
+        timeline: 67,
         name: "Hawkeye",
         date: "Nov 2021 – Dec 2021",
         image: hawkeye,
@@ -617,6 +684,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 62,
+        timeline: 68,
         name: "Moon Knight",
         date: "Mar 2022 – May 2022",
         image: moonknight,
@@ -625,6 +693,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 67,
+        timeline: 69,
         name: "She-Hulk: Attorney at Law",
         date: "Aug 2022 – Oct 2022",
         image: shehulk,
@@ -633,6 +702,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 64,
+        timeline: 70,
         name: "Ms Marvel",
         date: "June 2022 – July 2022",
         image: msmarvel,
@@ -641,6 +711,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 65,
+        timeline: 71,
         name: "Thor: Love and Thunder",
         date: "July 2022",
         image: thor4,
@@ -649,6 +720,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 73,
+        timeline: 72,
         name: "Secret Invasion",
         date: "June 2023 – July 2023",
         image: secret,
@@ -657,6 +729,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 69,
+        timeline: 73,
         name: "Black Panther: Wakanda Forever",
         date: "November 2022",
         image: blackPanther2,
@@ -665,6 +738,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 76,
+        timeline: 74,
         name: "The Marvels",
         date: "November 2023",
         image: CaptainMarvel2,
@@ -673,6 +747,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 78,
+        timeline: 75,
         name: "Echo",
         date: "January 2024",
         image: echo,
@@ -681,6 +756,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 68,
+        timeline: 76,
         name: "Werewolf By Night",
         date: "October 2022",
         image: werewolf,
@@ -689,6 +765,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 70,
+        timeline: 77,
         name: "The Guardians of the Galaxy Holiday Special",
         date: "November 2022",
         image: gotg_special,
@@ -697,6 +774,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 72,
+        timeline: 78,
         name: "Guardians of the Galaxy Vol 3",
         date: "May 2023",
         image: gotg3,
@@ -705,6 +783,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 71,
+        timeline: 79,
         name: "Ant-Man and The Wasp: Quantumania",
         date: "February 2023",
         image: antman3,
