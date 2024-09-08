@@ -584,26 +584,8 @@ const marvel_T = [
         time: "Time?"
     },
     { 
-        releaseDate : 57,
-        timeline: 57,
-        name: "What If...?",
-        date: "Aug 2021 – Oct 2021",
-        image: whatif,
-        type: "show",
-        time: "Multiverse"
-    },
-    { 
-        releaseDate : 77,
-        timeline: 58,
-        name: " What If...? season 2",
-        date: "December 2023",
-        image: whatif2,
-        type: "show",
-        time: "Multiverse"
-    },
-    { 
         releaseDate : 53,
-        timeline: 59,
+        timeline: 57,
         name: "WandaVision",
         date: "Jan 2021 – Mar 2021",
         image: wandavision,
@@ -612,7 +594,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 59,
-        timeline: 60,
+        timeline: 58,
         name: "Eternals",
         date: "November 2021",
         image: eternals,
@@ -621,7 +603,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 58,
-        timeline: 61,
+        timeline: 59,
         name: "Shang-Chi and the Legend of the Ten Rings",
         date: "September 2021",
         image: shangchi,
@@ -630,7 +612,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 54,
-        timeline: 62,
+        timeline: 60,
         name: "The Falcon and the Winter Soldier",
         date: "Mar 2021 – Apr 2021",
         image: falcon,
@@ -639,7 +621,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 79,
-        timeline: 63,
+        timeline: 61,
         name: "Deadpool & Wolverine",
         date: "July 2024",
         image: deadpool,
@@ -648,7 +630,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 49,
-        timeline: 64,
+        timeline: 62,
         name: "Spider-Man: Far From Home",
         date: "July 2019",
         image: spiderman2,
@@ -657,7 +639,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 61,
-        timeline: 65,
+        timeline: 63,
         name: "Spider-Man: No Way Home",
         date: "December 2021",
         image: spiderman3,
@@ -666,7 +648,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 63,
-        timeline: 66,
+        timeline: 64,
         name: "Doctor Strange in the Multiverse of Madness",
         date: "May 2022",
         image: doctorStrange2,
@@ -675,7 +657,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 60,
-        timeline: 67,
+        timeline: 65,
         name: "Hawkeye",
         date: "Nov 2021 – Dec 2021",
         image: hawkeye,
@@ -684,7 +666,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 62,
-        timeline: 68,
+        timeline: 66,
         name: "Moon Knight",
         date: "Mar 2022 – May 2022",
         image: moonknight,
@@ -693,7 +675,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 67,
-        timeline: 69,
+        timeline: 67,
         name: "She-Hulk: Attorney at Law",
         date: "Aug 2022 – Oct 2022",
         image: shehulk,
@@ -702,7 +684,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 64,
-        timeline: 70,
+        timeline: 68,
         name: "Ms Marvel",
         date: "June 2022 – July 2022",
         image: msmarvel,
@@ -711,7 +693,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 65,
-        timeline: 71,
+        timeline: 69,
         name: "Thor: Love and Thunder",
         date: "July 2022",
         image: thor4,
@@ -720,7 +702,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 73,
-        timeline: 72,
+        timeline: 70,
         name: "Secret Invasion",
         date: "June 2023 – July 2023",
         image: secret,
@@ -729,7 +711,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 69,
-        timeline: 73,
+        timeline: 71,
         name: "Black Panther: Wakanda Forever",
         date: "November 2022",
         image: blackPanther2,
@@ -738,7 +720,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 76,
-        timeline: 74,
+        timeline: 72,
         name: "The Marvels",
         date: "November 2023",
         image: CaptainMarvel2,
@@ -747,7 +729,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 78,
-        timeline: 75,
+        timeline: 73,
         name: "Echo",
         date: "January 2024",
         image: echo,
@@ -756,7 +738,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 68,
-        timeline: 76,
+        timeline: 74,
         name: "Werewolf By Night",
         date: "October 2022",
         image: werewolf,
@@ -765,7 +747,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 70,
-        timeline: 77,
+        timeline: 75,
         name: "The Guardians of the Galaxy Holiday Special",
         date: "November 2022",
         image: gotg_special,
@@ -774,7 +756,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 72,
-        timeline: 78,
+        timeline: 76,
         name: "Guardians of the Galaxy Vol 3",
         date: "May 2023",
         image: gotg3,
@@ -783,13 +765,31 @@ const marvel_T = [
     },
     { 
         releaseDate : 71,
-        timeline: 79,
+        timeline: 77,
         name: "Ant-Man and The Wasp: Quantumania",
         date: "February 2023",
         image: antman3,
         type: "movie",
         time: "2026"
-    }
+    },
+    { 
+        releaseDate : 57,
+        timeline: 78,
+        name: "What If...?",
+        date: "Aug 2021 – Oct 2021",
+        image: whatif,
+        type: "show",
+        time: "Multiverse"
+    },
+    { 
+        releaseDate : 77,
+        timeline: 79,
+        name: " What If...? season 2",
+        date: "December 2023",
+        image: whatif2,
+        type: "show",
+        time: "Multiverse"
+    },
     
 ];
 
