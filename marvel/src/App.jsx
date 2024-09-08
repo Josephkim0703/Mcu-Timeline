@@ -12,6 +12,10 @@ function App() {
   const [cards, setCards] = useState([]);
   const [cards2, setCards2] = useState([]);
   const [type, setType] = useState([]);
+
+  const [left, setLeft] = useState(0);
+  const [right, setRight] = useState(8);
+
   const [hide, setHide] = useState(Array(5).fill(false));
 
   function refresh() {
@@ -19,6 +23,8 @@ function App() {
     setType([]);
     setCards([]);
     setCards2([]);
+    setLeft(0);
+    setRight(8);
   }
 
   function updateHide(index, value) {
@@ -100,8 +106,7 @@ function App() {
     console.log("current setting: RD");
   }
 
-  const [left, setLeft] = useState(0);
-  const [right, setRight] = useState(8);
+
 
   useEffect(() => {
     function handleWheel(e) {
