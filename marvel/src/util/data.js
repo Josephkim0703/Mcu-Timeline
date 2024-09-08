@@ -712,6 +712,6 @@ const marvel_T = [
         time: "2026"
     }
     
-    ];
+];
 
 export {marvel_T};
