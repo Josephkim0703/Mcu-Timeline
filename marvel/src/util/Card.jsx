@@ -3,11 +3,16 @@ import "../css/card.css";
 import "../css/index.css";
 
 function Card(props) {
+
   return (
     <>
       <div id="card">
         {props.cards.map((image, index) => (
-          <img key={index} src={image} />
+          <div key={index}>
+            <img src={image} />   
+            {props.hide1 && (<h1>{props.date[index]}</h1>)}                  
+            {props.hide2 && (<h1>{props.time[index]}</h1>)}   
+          </div>
         ))}
       </div>
     </>

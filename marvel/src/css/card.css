@@ -1,40 +1,48 @@
 @font-face {
-    font-family: marvel;
-    src: url(../assets/text/AvengeRegular-Yzdxy.ttf);
+  font-family: marvel;
+  src: url(../assets/text/AvengeRegular-Yzdxy.ttf);
 }
 
-#card{
-    z-index: 2;
-    display: flex;
-    flex-direction: row;
+#card {
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
 }
 
-#card img{
-    border: 2px solid black;
-    border-radius: 0.4rem;
-    width: 9rem;
-    height: 10rem;
-    transition: border 0.1s ease-in-out;
-    margin: 5px 55px;
+#card img {
+  border: 2px solid black;
+  border-radius: 0.4rem;
+  width: 7rem;
+  height: 10rem;
+  transition: border 0.1s ease-in-out;
+  margin: 5px 55px;
 }
 
-#card img:hover{
-    border: 2px solid rgb(255, 255, 255);
+#card h1 {
+  font-size: 1rem;
+  font-family: "";
 }
 
-#timeline{
-    width: 100%;
-    height: auto;
-    position: absolute;
-    top: 25%;
-    left: 0;
-    z-index: 2;
-    border: 5px solid white;
+#card img:hover {
+  border: 2px solid rgb(255, 255, 255);
 }
 
-#timeline > :nth-child(2){
-    margin-left: 95px;
-    margin-top: 10rem;
+#timeline {
+  width: 100vw;
+  height: 35rem;
+  position: absolute;
+  top: 25%;
+  left: 0;
+  z-index: 2;
+  border: 5px solid white;
 }
 
+#timeline > :nth-child(2) {
+  margin-left: 95px;
+  margin-top: 10rem;
+}
 
+#timeline > :nth-child(2) h1 {
+  margin-top: -13rem;
+}
