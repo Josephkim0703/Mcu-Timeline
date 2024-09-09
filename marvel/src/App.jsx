@@ -4,7 +4,10 @@ import tva from "./assets/background/tva.jpg";
 import Card from "./util/Card.jsx";
 import Header from "./util/Header.jsx";
 import Remote from "./util/Remote.jsx";
-import { marvel_T} from "./util/data.js";
+import { marvel_T } from "./util/data.js";
+
+//fix scroll where it doesnt scroll back if theres nothing to scroll and doesnt scroll to far forward
+//scrolling for movie and show category
 
 function App() {
   const [background, setBackground] = useState(tva);
@@ -20,6 +23,10 @@ function App() {
 
   function refresh() {
     updateHide(0, false);
+    set();
+  }
+
+  function set() {
     setType([]);
     setCards([]);
     setCards2([]);
@@ -91,7 +98,13 @@ function App() {
   }
 
   function ButtonCR() {
-    setType(marvel_T.sort((a, b) => a.timeline - b.timeline));
+    setTimeout(() => {
+      set();
+      setTimeout(() => {
+        setType(marvel_T.sort((a, b) => a.timeline - b.timeline));
+      }, 0);
+    }, 0);
+   
     updateHide(1, false);
     updateHide(2, true);
     updateHide(0, true);
@@ -99,23 +112,29 @@ function App() {
   }
 
   function ButtonRD() {
-    setType(marvel_T.sort((a, b) => a.releaseDate - b.releaseDate));
+    setTimeout(() => {
+      set();
+      setTimeout(() => {
+        setType(marvel_T.sort((a, b) => a.releaseDate - b.releaseDate));
+      }, 0);
+    }, 0);
+
+   
     updateHide(1, true);
     updateHide(2, false);
     updateHide(0, true);
     console.log("current setting: RD");
   }
 
-
-
+  //scroll wheel through timeline
   useEffect(() => {
     function handleWheel(e) {
       if (e.deltaY > 0) {
         setLeft((prevLeft) => prevLeft + 1);
         setRight((prevRight) => prevRight + 1);
       } else if (e.deltaY < 0) {
-        setLeft((prevLeft) => prevLeft - 1);
-        setRight((prevRight) => prevRight - 1);
+        setLeft((prevLeft) => Math.max(prevLeft - 1, 0));
+        setRight((prevRight) => Math.max(prevRight - 1, 8));
       }
     }
 
@@ -126,6 +145,7 @@ function App() {
     };
   }, []);
 
+  //updates timeline cards
   useEffect(() => {
     ButtonAll();
   }, [type, left, right]);
@@ -152,8 +172,8 @@ function App() {
               id="top_list"
             />
             <Card
-               hide1={hide[1]}
-               hide2={hide[2]}
+              hide1={hide[1]}
+              hide2={hide[2]}
               cards={cards2.map((card) => card.image)}
               date={cards2.map((card) => card.date)}
               time={cards2.map((card) => card.time)}

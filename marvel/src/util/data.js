@@ -77,6 +77,7 @@ import werewolf from '../assets/cards/werewolf.jpg';
 import secret from '../assets/cards/secret_invasion.jpg';
 import echo from '../assets/cards/echo.jpg';
 import deadpool from '../assets/cards/deadpool.jpg';
+import comingSoon from '../assets/cards/marvel.jpg';
 
 const marvel_T = [
     { 
@@ -784,13 +785,21 @@ const marvel_T = [
     { 
         releaseDate : 77,
         timeline: 79,
-        name: " What If...? season 2",
+        name: "What If...? season 2",
         date: "December 2023",
         image: whatif2,
         type: "show",
         time: "Multiverse"
     },
-    
+    { 
+        releaseDate : 1000,
+        timeline: 1000,
+        name: "Coming Soon...",
+        date: "Coming Soon...",
+        image: comingSoon,
+        type: "?",
+        time: "Coming Soon..."
+    }
 ];
 
 export {marvel_T};
