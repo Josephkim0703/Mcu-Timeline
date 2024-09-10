@@ -6,8 +6,7 @@ import Header from "./util/Header.jsx";
 import Remote from "./util/Remote.jsx";
 import { marvel_T } from "./util/data.js";
 
-//fix scroll where it doesnt scroll back if theres nothing to scroll and doesnt scroll to far forward
-//scrolling for movie and show category
+//shows cards when clicking on the top buttons
 
 function App() {
   const [background, setBackground] = useState(tva);
@@ -15,14 +14,25 @@ function App() {
   const [cards, setCards] = useState([]);
   const [cards2, setCards2] = useState([]);
   const [type, setType] = useState([]);
+  const [status, setStatus] = useState();
 
   const [left, setLeft] = useState(0);
   const [right, setRight] = useState(8);
 
   const [hide, setHide] = useState(Array(5).fill(false));
 
+  const [ArrLength, setArrLength] = useState();
+  const [minArrLength, setminArrLength] = useState();
+
+  function handleLength(x) {
+    const length = Math.ceil(x.length / 2);
+    setArrLength(length);
+    setminArrLength(length - 8);
+  }
+
   function refresh() {
     updateHide(0, false);
+    ButtonAll();
     set();
   }
 
@@ -50,13 +60,15 @@ function App() {
         time: element.time,
         date: element.date,
       }));
-    setCards(x);
 
-    const top = x.filter((_, index) => index % 2 === 0);
-    const bottom = x.filter((_, index) => index % 2 === 1);
+    const top = x.filter((_, index) => index % 2 === 0).slice(left, right);
+    const bottom = x.filter((_, index) => index % 2 === 1).slice(left, right);
 
+    handleLength(x);
+    updateHide(0, true);
     setCards(top);
     setCards2(bottom);
+    setStatus("show");
   }
 
   function ButtonMovie() {
@@ -68,10 +80,17 @@ function App() {
         date: element.date,
       }));
 
-    const top = x.filter((_, index) => index % 2 === 0);
-    const bottom = x.filter((_, index) => index % 2 === 1);
+    const top = x.filter((_, index) => index % 2 === 0).slice(left, right);
+    const bottom = x.filter((_, index) => index % 2 === 1).slice(left, right);
+    setCards([]);
+    setCards2([]);
+    setLeft(0);
+    setRight(8);
+
+    handleLength(x);
     setCards(top);
     setCards2(bottom);
+    setStatus("movie");
   }
 
   function ButtonAll() {
@@ -93,8 +112,10 @@ function App() {
         date: char.date,
       }));
 
+    handleLength(type);
     setCards(x);
     setCards2(y);
+    setStatus("all");
   }
 
   function ButtonCR() {
@@ -104,7 +125,8 @@ function App() {
         setType(marvel_T.sort((a, b) => a.timeline - b.timeline));
       }, 0);
     }, 0);
-   
+
+    setLeft(0);
     updateHide(1, false);
     updateHide(2, true);
     updateHide(0, true);
@@ -119,7 +141,6 @@ function App() {
       }, 0);
     }, 0);
 
-   
     updateHide(1, true);
     updateHide(2, false);
     updateHide(0, true);
@@ -130,8 +151,8 @@ function App() {
   useEffect(() => {
     function handleWheel(e) {
       if (e.deltaY > 0) {
-        setLeft((prevLeft) => prevLeft + 1);
-        setRight((prevRight) => prevRight + 1);
+        setLeft((prevLeft) => Math.min(prevLeft + 1, minArrLength));
+        setRight((prevRight) => Math.min(prevRight + 1, ArrLength));
       } else if (e.deltaY < 0) {
         setLeft((prevLeft) => Math.max(prevLeft - 1, 0));
         setRight((prevRight) => Math.max(prevRight - 1, 8));
@@ -143,11 +164,17 @@ function App() {
     return () => {
       window.removeEventListener("wheel", handleWheel);
     };
-  }, []);
+  }, [minArrLength, ArrLength]);
 
-  //updates timeline cards
+  //updates timeline for scrolling
   useEffect(() => {
-    ButtonAll();
+    if (status === "show") {
+      ButtonTv();
+    } else if (status === "movie") {
+      ButtonMovie();
+    } else {
+      ButtonAll();
+    }
   }, [type, left, right]);
 
   return (
