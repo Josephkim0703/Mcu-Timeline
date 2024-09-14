@@ -82,10 +82,6 @@ function App() {
 
     const top = x.filter((_, index) => index % 2 === 0).slice(left, right);
     const bottom = x.filter((_, index) => index % 2 === 1).slice(left, right);
-    setCards([]);
-    setCards2([]);
-    setLeft(0);
-    setRight(8);
 
     handleLength(x);
     setCards(top);
@@ -94,7 +90,7 @@ function App() {
   }
 
   function ButtonAll() {
-    const x = type
+    const top = type
       .filter((_, index) => index % 2 === 0)
       .slice(left, right)
       .map((char) => ({
@@ -103,7 +99,7 @@ function App() {
         date: char.date,
       }));
 
-    const y = type
+    const bottom = type
       .filter((_, index) => index % 2 === 1)
       .slice(left, right)
       .map((char) => ({
@@ -113,9 +109,27 @@ function App() {
       }));
 
     handleLength(type);
-    setCards(x);
-    setCards2(y);
+    setCards(top);
+    setCards2(bottom);
     setStatus("all");
+  }
+
+  function ButtonTvReset() {
+    ButtonTv();
+    setLeft(0);
+    setRight(8);
+  }
+
+  function ButtonMvReset() {
+    ButtonMovie();
+    setLeft(0);
+    setRight(8);
+  }
+
+  function ButtonAllReset() {
+    ButtonAll();
+    setLeft(0);
+    setRight(8);
   }
 
   function ButtonCR() {
@@ -126,7 +140,6 @@ function App() {
       }, 0);
     }, 0);
 
-    setLeft(0);
     updateHide(1, false);
     updateHide(2, true);
     updateHide(0, true);
@@ -181,9 +194,9 @@ function App() {
     <>
       <Header
         refresh={refresh}
-        buttonShow={ButtonTv}
-        buttonMovie={ButtonMovie}
-        buttonAll={ButtonAll}
+        buttonShow={ButtonTvReset}
+        buttonMovie={ButtonMvReset}
+        buttonAll={ButtonAllReset}
       />
       <main>
         <Remote ButtonC={ButtonCR} ButtonR={ButtonRD} />

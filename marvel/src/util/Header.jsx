@@ -2,7 +2,6 @@ import "../css/index.css";
 import minute from "../assets/char/miss_minute.png";
 import { useState, useEffect, useRef } from "react";
 
-
 function Header(props) {
   const [hide, setHide] = useState(false);
   const [complete, setComplete] = useState(false);
@@ -53,17 +52,22 @@ function Header(props) {
     };
   }, []);
 
-
   return (
     <header>
-      <button type="button" id="refresh" onClick={props.refresh}><h1>MCU Timeline</h1></button>
+      <button type="button" id="refresh" onClick={props.refresh}>
+        <h1>MCU Timeline</h1>
+      </button>
       <div id="slider" ref={buttonRef}>
         <button type="button" id="main_button">
           <img src={minute} alt="" onClick={handleClick} />
         </button>
         {hide && (
           <div id="option">
-            <button type="button" className="option" onClick={props.buttonMovie}>
+            <button
+              type="button"
+              className="option"
+              onClick={props.buttonMovie}
+            >
               Movies
             </button>
             <button type="button" className="option" onClick={props.buttonShow}>
