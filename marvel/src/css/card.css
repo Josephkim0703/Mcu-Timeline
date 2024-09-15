@@ -13,6 +13,11 @@
   src: url(../assets/text/QuickerlyComics-0WDgr.ttf);
 }
 
+@font-face {
+  font-family: wakanda;
+  src: url(../assets/text/FriendlyComics-RpX9A.otf);
+}
+
 #card {
   z-index: 2;
   display: flex;

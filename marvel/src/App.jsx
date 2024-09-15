@@ -4,9 +4,11 @@ import tva from "./assets/background/tva.jpg";
 import Card from "./util/Card.jsx";
 import Header from "./util/Header.jsx";
 import Remote from "./util/Remote.jsx";
+import MissMinute from "./util/MissMinute.jsx";
 import { marvel_T } from "./util/data.js";
 
-//shows cards when clicking on the top buttons
+//shows cards when clicking on the top buttons make remote come up to choose option
+//mis miunte in the beginning explaining the website local storage to show once
 
 function App() {
   const [background, setBackground] = useState(tva);
@@ -24,18 +26,22 @@ function App() {
   const [ArrLength, setArrLength] = useState();
   const [minArrLength, setminArrLength] = useState();
 
+
+  //equation for handling the length of the split array
   function handleLength(x) {
     const length = Math.ceil(x.length / 2);
     setArrLength(length);
     setminArrLength(length - 8);
   }
 
+  //reset page function
   function refresh() {
     updateHide(0, false);
     ButtonAll();
     set();
   }
 
+  //clean up function
   function set() {
     setType([]);
     setCards([]);
@@ -44,6 +50,7 @@ function App() {
     setRight(8);
   }
 
+  //updates hide function on dom elements
   function updateHide(index, value) {
     setHide((prevHide) => {
       const newHide = [...prevHide];
@@ -52,6 +59,7 @@ function App() {
     });
   }
 
+  //sorts the cards into the categories TV, movie, all.
   function ButtonTv() {
     const x = type
       .filter((element) => element.type === "show")
@@ -114,24 +122,41 @@ function App() {
     setStatus("all");
   }
 
+  //The reset buttons help reset the positions of the cards without being affected by the usestate
   function ButtonTvReset() {
     ButtonTv();
     setLeft(0);
     setRight(8);
+   
+    updateHide(1, false);
+    updateHide(2, true);
+    updateHide(0, true);
+    setType(marvel_T.sort((a, b) => a.timeline - b.timeline));
   }
 
   function ButtonMvReset() {
     ButtonMovie();
     setLeft(0);
     setRight(8);
+   
+    updateHide(1, false);
+    updateHide(2, true);
+    updateHide(0, true);
+    setType(marvel_T.sort((a, b) => a.timeline - b.timeline));
   }
 
   function ButtonAllReset() {
     ButtonAll();
     setLeft(0);
     setRight(8);
+   
+    updateHide(1, false);
+    updateHide(2, true);
+    updateHide(0, true);
+    setType(marvel_T.sort((a, b) => a.timeline - b.timeline));
   }
 
+  //sorts cards in chronological order
   function ButtonCR() {
     setTimeout(() => {
       set();
@@ -144,8 +169,12 @@ function App() {
     updateHide(2, true);
     updateHide(0, true);
     console.log("current setting: CR");
+
+    sessionStorage.setItem("Starter_Page", true)
+    updateHide(4, false);  
   }
 
+  //sorts cards in release date order
   function ButtonRD() {
     setTimeout(() => {
       set();
@@ -158,7 +187,11 @@ function App() {
     updateHide(2, false);
     updateHide(0, true);
     console.log("current setting: RD");
+
+    sessionStorage.setItem("Starter_Page", true)
+    updateHide(4, false);  
   }
+  
 
   //scroll wheel through timeline
   useEffect(() => {
@@ -190,6 +223,17 @@ function App() {
     }
   }, [type, left, right]);
 
+  useEffect(() => {
+    updateHide(4, true);
+
+    const complete = sessionStorage.getItem("Starter_Page");
+
+    if(complete === "true") {
+      updateHide(4, false);
+    }
+  
+  },[])
+
   return (
     <>
       <Header
@@ -199,6 +243,8 @@ function App() {
         buttonAll={ButtonAllReset}
       />
       <main>
+        {hide[4] && (<MissMinute/>)} 
+      
         <Remote ButtonC={ButtonCR} ButtonR={ButtonRD} />
 
         {hide[0] && (
