@@ -50,7 +50,7 @@
   top: 25%;
   left: 0;
   z-index: 2;
-  border: 5px solid white;
+  border: none;
 }
 
 #timeline > :nth-child(2) {
@@ -60,4 +60,8 @@
 
 #timeline > :nth-child(2) h1 {
   margin-top: -13rem;
+}
+
+@media only screen and (max-height: 900px) {
+
 }

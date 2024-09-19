@@ -212,6 +212,25 @@ function App() {
     };
   }, [minArrLength, ArrLength]);
 
+// handles arrow keys clicks for keyboard instead of mouse scroll
+  useEffect(() => {
+    function handleClick(e) {
+      if (e.keyCode === 38 || e.keyCode === 39) {
+        setLeft((prevLeft) => Math.min(prevLeft + 1, minArrLength));
+        setRight((prevRight) => Math.min(prevRight + 1, ArrLength));
+      } else if (e.keyCode === 40 || e.keyCode === 37) {
+        setLeft((prevLeft) => Math.max(prevLeft - 1, 0));
+        setRight((prevRight) => Math.max(prevRight - 1, 8));
+      }
+    }
+
+    window.addEventListener("keydown", handleClick);
+
+    return () => {
+      window.removeEventListener("keydown", handleClick);
+    };
+  }, [minArrLength, ArrLength]);
+
   //updates timeline for scrolling
   useEffect(() => {
     if (status === "show") {
