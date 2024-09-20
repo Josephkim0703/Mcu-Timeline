@@ -28,12 +28,15 @@ function App() {
   const [ArrLength, setArrLength] = useState();
   const [minArrLength, setminArrLength] = useState();
 
+  const [width, setWidth] = useState();
+
+  //screen width adaptiveness shrink number of cards
   useEffect(() => {
-   
-
-    
+    setWidth(window.innerWidth) 
+   if(width > 900) {
+    setAdaptiveNum(6);
+   }
   },[]);
-
 
   //equation for handling the length of the split array
   function handleLength(x) {
