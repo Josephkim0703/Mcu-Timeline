@@ -26,6 +26,7 @@ function App() {
   const [ArrLength, setArrLength] = useState();
   const [minArrLength, setminArrLength] = useState();
 
+  const remoteRef = useRef(null);
 
   //equation for handling the length of the split array
   function handleLength(x) {
@@ -172,6 +173,8 @@ function App() {
 
     sessionStorage.setItem("Starter_Page", true)
     updateHide(4, false);  
+
+    remoteRef.current.classList.add();
   }
 
   //sorts cards in release date order
@@ -190,6 +193,8 @@ function App() {
 
     sessionStorage.setItem("Starter_Page", true)
     updateHide(4, false);  
+
+    remoteRef.current.classList.add(tiltAway);
   }
   
 
@@ -245,7 +250,7 @@ function App() {
       <main>
         {hide[4] && (<MissMinute/>)} 
       
-        <Remote ButtonC={ButtonCR} ButtonR={ButtonRD} />
+        <Remote ref={remoteRef} ButtonC={ButtonCR} ButtonR={ButtonRD} />
 
         {hide[0] && (
           <div id="timeline">
