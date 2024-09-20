@@ -18,20 +18,28 @@ function App() {
   const [type, setType] = useState([]);
   const [status, setStatus] = useState();
 
+  const [AdaptiveNum, setAdaptiveNum] = useState(8);
+
   const [left, setLeft] = useState(0);
-  const [right, setRight] = useState(8);
+  const [right, setRight] = useState(AdaptiveNum);
 
   const [hide, setHide] = useState(Array(5).fill(false));
 
   const [ArrLength, setArrLength] = useState();
   const [minArrLength, setminArrLength] = useState();
 
+  useEffect(() => {
+   
+
+    
+  },[]);
+
 
   //equation for handling the length of the split array
   function handleLength(x) {
     const length = Math.ceil(x.length / 2);
     setArrLength(length);
-    setminArrLength(length - 8);
+    setminArrLength(length - AdaptiveNum);
   }
 
   //reset page function
@@ -47,7 +55,7 @@ function App() {
     setCards([]);
     setCards2([]);
     setLeft(0);
-    setRight(8);
+    setRight(AdaptiveNum);
   }
 
   //updates hide function on dom elements
@@ -126,7 +134,7 @@ function App() {
   function ButtonTvReset() {
     ButtonTv();
     setLeft(0);
-    setRight(8);
+    setRight(AdaptiveNum);
    
     updateHide(1, false);
     updateHide(2, true);
@@ -137,7 +145,7 @@ function App() {
   function ButtonMvReset() {
     ButtonMovie();
     setLeft(0);
-    setRight(8);
+    setRight(AdaptiveNum);
    
     updateHide(1, false);
     updateHide(2, true);
@@ -148,7 +156,7 @@ function App() {
   function ButtonAllReset() {
     ButtonAll();
     setLeft(0);
-    setRight(8);
+    setRight(AdaptiveNum);
    
     updateHide(1, false);
     updateHide(2, true);
@@ -201,7 +209,7 @@ function App() {
         setRight((prevRight) => Math.min(prevRight + 1, ArrLength));
       } else if (e.deltaY < 0) {
         setLeft((prevLeft) => Math.max(prevLeft - 1, 0));
-        setRight((prevRight) => Math.max(prevRight - 1, 8));
+        setRight((prevRight) => Math.max(prevRight - 1, AdaptiveNum));
       }
     }
 
@@ -220,7 +228,7 @@ function App() {
         setRight((prevRight) => Math.min(prevRight + 1, ArrLength));
       } else if (e.keyCode === 40 || e.keyCode === 37) {
         setLeft((prevLeft) => Math.max(prevLeft - 1, 0));
-        setRight((prevRight) => Math.max(prevRight - 1, 8));
+        setRight((prevRight) => Math.max(prevRight - 1, AdaptiveNum));
       }
     }
 
