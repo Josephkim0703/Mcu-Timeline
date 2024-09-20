@@ -196,8 +196,7 @@ function App() {
     updateHide(4, false);  
 
     remoteRef.current.classList.add(tiltAway);
-  }
-  
+  } 
 
   //scroll wheel through timeline
   useEffect(() => {
@@ -221,10 +220,10 @@ function App() {
 // handles arrow keys clicks for keyboard instead of mouse scroll
   useEffect(() => {
     function handleClick(e) {
-      if (e.keyCode === 38 || e.keyCode === 39) {
+      if (e.keyCode === 38 || e.keyCode === 39 || e.keyCode === 65) {
         setLeft((prevLeft) => Math.min(prevLeft + 1, minArrLength));
         setRight((prevRight) => Math.min(prevRight + 1, ArrLength));
-      } else if (e.keyCode === 40 || e.keyCode === 37) {
+      } else if (e.keyCode === 40 || e.keyCode === 37 || e.keyCode === 68) {
         setLeft((prevLeft) => Math.max(prevLeft - 1, 0));
         setRight((prevRight) => Math.max(prevRight - 1, AdaptiveNum));
       }
