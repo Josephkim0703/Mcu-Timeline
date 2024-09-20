@@ -61,3 +61,29 @@
 #timeline > :nth-child(2) h1 {
   margin-top: -13rem;
 }
+
+@media only screen and (max-height: 900px) {
+  #timeline {
+    height: 30.5rem;
+    top: 20%;
+  }
+
+  #timeline > :nth-child(2) {
+    margin-left: 90px;
+    margin-top: 8rem;
+  }
+  
+  #timeline > :nth-child(2) h1 {
+    margin-top: -11.5rem;
+  }
+
+  #card img {
+    width: 6rem;
+    height: 9rem;
+    margin: 5px 55px;
+  }
+  
+  #card h1 {
+    font-size: 0.8rem;
+  }
+}
