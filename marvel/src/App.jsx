@@ -11,7 +11,6 @@ import { marvel_T } from "./util/data.js";
 //mis miunte in the beginning explaining the website local storage to show once
 
 function App() {
-
   const [cards, setCards] = useState([]);
   const [cards2, setCards2] = useState([]);
   const [type, setType] = useState([]);
@@ -33,6 +32,21 @@ function App() {
     const length = Math.ceil(x.length / 2);
     setArrLength(length);
     setminArrLength(length - AdaptiveNum);
+  }
+
+  //when remote is clicked saves input in session storage for header button access
+  function handleSettingType() {
+    const typeStorage = sessionStorage.getItem("Set_Type:");
+
+    if (typeStorage === "CR") {
+      updateHide(1, false);
+      updateHide(2, true);
+      setType(marvel_T.sort((a, b) => a.timeline - b.timeline));
+    } else if (typeStorage === "RD") {
+      updateHide(1, true);
+      updateHide(2, false);
+      setType(marvel_T.sort((a, b) => a.releaseDate - b.releaseDate));
+    }
   }
 
   //reset page function
@@ -123,26 +137,12 @@ function App() {
     setStatus("all");
   }
 
-  function handleSettingType() {
-    const typeStorage = sessionStorage.getItem('Set_Type:'); 
-
-    if(typeStorage === "CR") {
-      updateHide(1, false);
-      updateHide(2, true);
-      setType(marvel_T.sort((a, b) => a.timeline - b.timeline));
-    } else if(typeStorage === "RD") {
-      updateHide(1, true);
-      updateHide(2, false);
-      setType(marvel_T.sort((a, b) => a.releaseDate - b.releaseDate));
-      }
-  }
-
   //The reset buttons help reset the positions of the cards without being affected by the usestate
   function ButtonTvReset() {
     ButtonTv();
     setLeft(0);
     setRight(AdaptiveNum);
-   
+
     updateHide(1, false);
     updateHide(2, true);
     updateHide(0, true);
@@ -154,7 +154,7 @@ function App() {
     ButtonMovie();
     setLeft(0);
     setRight(AdaptiveNum);
-   
+
     updateHide(1, false);
     updateHide(2, true);
     updateHide(0, true);
@@ -166,7 +166,7 @@ function App() {
     ButtonAll();
     setLeft(0);
     setRight(AdaptiveNum);
-   
+
     updateHide(1, false);
     updateHide(2, true);
     updateHide(0, true);
@@ -190,8 +190,8 @@ function App() {
 
     sessionStorage.removeItem("Set_Type:");
     sessionStorage.setItem("Set_Type:", "CR");
-    sessionStorage.setItem("Starter_Page", true)
-    updateHide(4, false);  
+    sessionStorage.setItem("Starter_Page", true);
+    updateHide(4, false);
   }
 
   //sorts cards in release date order
@@ -210,10 +210,9 @@ function App() {
 
     sessionStorage.removeItem("Set_Type:");
     sessionStorage.setItem("Set_Type:", "RD");
-    sessionStorage.setItem("Starter_Page", true)
-    updateHide(4, false);  
-
-  } 
+    sessionStorage.setItem("Starter_Page", true);
+    updateHide(4, false);
+  }
 
   //scroll wheel through timeline
   useEffect(() => {
@@ -265,16 +264,19 @@ function App() {
   }, [type, left, right]);
 
   //screen width adaptiveness shrink number of cards
-    useEffect(() => {
-      setWidth(window.innerWidth) 
-     if(width > 900) {
-      setAdaptiveNum(6);
-     } else {
-      setAdaptiveNum(8);
-     }
+  useEffect(() => {
+    setWidth(window.innerWidth);
 
-     console.log(width);
-    },[window.innerWidth]);
+    setTimeout(() => {
+      if (width <= 1500) {
+        setAdaptiveNum(6);
+      } else {
+        setAdaptiveNum(8);
+      }
+    }, 0);
+      
+    console.log(width);
+  }, [window.innerWidth]);
 
   //save on session storage for miss minute
   useEffect(() => {
@@ -282,11 +284,10 @@ function App() {
 
     const complete = sessionStorage.getItem("Starter_Page");
 
-    if(complete === "true") {
+    if (complete === "true") {
       updateHide(4, false);
     }
-  
-  },[])
+  }, []);
 
   return (
     <>
@@ -297,9 +298,9 @@ function App() {
         buttonAll={ButtonAllReset}
       />
       <main>
-        {hide[4] && (<MissMinute/>)} 
-      
-        <Remote  ButtonC={ButtonCR} ButtonR={ButtonRD} />
+        {hide[4] && <MissMinute />}
+
+        <Remote ButtonC={ButtonCR} ButtonR={ButtonRD} />
 
         {hide[0] && (
           <div id="timeline">
