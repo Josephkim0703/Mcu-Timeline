@@ -7,8 +7,11 @@ import Remote from "./util/Remote.jsx";
 import MissMinute from "./util/MissMinute.jsx";
 import { marvel_T } from "./util/data.js";
 
-//shows cards when clicking on the top buttons make remote come up to choose option
-//mis miunte in the beginning explaining the website local storage to show once
+//remote design
+//remote movement
+//timeline design
+//screen adaptiveness when shrinking page down
+//functionality when clicking on the buttons
 
 function App() {
   const [cards, setCards] = useState([]);
