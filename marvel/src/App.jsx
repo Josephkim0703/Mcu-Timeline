@@ -289,7 +289,7 @@ function App() {
       <main>
         {hide[4] && (<MissMinute/>)} 
       
-        <Remote ref={remoteRef} ButtonC={ButtonCR} ButtonR={ButtonRD} />
+        <Remote  ButtonC={ButtonCR} ButtonR={ButtonRD} />
 
         {hide[0] && (
           <div id="timeline">
