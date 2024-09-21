@@ -11,7 +11,6 @@ import { marvel_T } from "./util/data.js";
 //mis miunte in the beginning explaining the website local storage to show once
 
 function App() {
-  const [background, setBackground] = useState(tva);
 
   const [cards, setCards] = useState([]);
   const [cards2, setCards2] = useState([]);
@@ -19,6 +18,7 @@ function App() {
   const [status, setStatus] = useState();
 
   const [AdaptiveNum, setAdaptiveNum] = useState(8);
+  const [width, setWidth] = useState();
 
   const [left, setLeft] = useState(0);
   const [right, setRight] = useState(AdaptiveNum);
@@ -27,16 +27,6 @@ function App() {
 
   const [ArrLength, setArrLength] = useState();
   const [minArrLength, setminArrLength] = useState();
-
-  const [width, setWidth] = useState();
-
-  //screen width adaptiveness shrink number of cards
-  useEffect(() => {
-    setWidth(window.innerWidth) 
-   if(width > 900) {
-    setAdaptiveNum(6);
-   }
-  },[]);
 
   //equation for handling the length of the split array
   function handleLength(x) {
@@ -223,7 +213,7 @@ function App() {
     };
   }, [minArrLength, ArrLength]);
 
-// handles arrow keys clicks for keyboard instead of mouse scroll
+  // handles arrow keys clicks for keyboard instead of mouse scroll
   useEffect(() => {
     function handleClick(e) {
       if (e.keyCode === 38 || e.keyCode === 39) {
@@ -253,6 +243,17 @@ function App() {
     }
   }, [type, left, right]);
 
+  //screen width adaptiveness shrink number of cards
+    useEffect(() => {
+      setWidth(window.innerWidth) 
+     if(width > 900) {
+      setAdaptiveNum(4);
+     } else {
+      setAdaptiveNum(8);
+     }
+    },[]);
+
+  //save on session storage for miss minute
   useEffect(() => {
     updateHide(4, true);
 
@@ -298,7 +299,7 @@ function App() {
           </div>
         )}
 
-        <img src={background} alt="" id="background" />
+        <img src={tva} alt="" id="background" />
       </main>
     </>
   );
