@@ -28,14 +28,6 @@ function App() {
   const [ArrLength, setArrLength] = useState();
   const [minArrLength, setminArrLength] = useState();
 
-  //screen width adaptiveness shrink number of cards
-  useEffect(() => {
-    setWidth(window.innerWidth) 
-   if(width > 900) {
-    setAdaptiveNum(6);
-   }
-  },[]);
-
   //equation for handling the length of the split array
   function handleLength(x) {
     const length = Math.ceil(x.length / 2);
@@ -182,7 +174,7 @@ function App() {
     sessionStorage.setItem("Starter_Page", true)
     updateHide(4, false);  
 
-    remoteRef.current.classList.add();
+
   }
 
   //sorts cards in release date order
@@ -202,7 +194,7 @@ function App() {
     sessionStorage.setItem("Starter_Page", true)
     updateHide(4, false);  
 
-    remoteRef.current.classList.add(tiltAway);
+  
   } 
 
   //scroll wheel through timeline
@@ -258,11 +250,13 @@ function App() {
     useEffect(() => {
       setWidth(window.innerWidth) 
      if(width > 900) {
-      setAdaptiveNum(4);
+      setAdaptiveNum(6);
      } else {
       setAdaptiveNum(8);
      }
-    },[]);
+
+     console.log(width);
+    },[window.innerWidth]);
 
   //save on session storage for miss minute
   useEffect(() => {
