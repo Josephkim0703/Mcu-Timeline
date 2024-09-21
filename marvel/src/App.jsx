@@ -123,6 +123,20 @@ function App() {
     setStatus("all");
   }
 
+  function handleSettingType() {
+    const typeStorage = sessionStorage.getItem('Set_Type:'); 
+
+    if(typeStorage === "CR") {
+      updateHide(1, false);
+      updateHide(2, true);
+      setType(marvel_T.sort((a, b) => a.timeline - b.timeline));
+    } else if(typeStorage === "RD") {
+      updateHide(1, true);
+      updateHide(2, false);
+      setType(marvel_T.sort((a, b) => a.releaseDate - b.releaseDate));
+      }
+  }
+
   //The reset buttons help reset the positions of the cards without being affected by the usestate
   function ButtonTvReset() {
     ButtonTv();
@@ -132,7 +146,8 @@ function App() {
     updateHide(1, false);
     updateHide(2, true);
     updateHide(0, true);
-    setType(marvel_T.sort((a, b) => a.timeline - b.timeline));
+
+    handleSettingType();
   }
 
   function ButtonMvReset() {
@@ -143,7 +158,8 @@ function App() {
     updateHide(1, false);
     updateHide(2, true);
     updateHide(0, true);
-    setType(marvel_T.sort((a, b) => a.timeline - b.timeline));
+
+    handleSettingType();
   }
 
   function ButtonAllReset() {
@@ -154,7 +170,8 @@ function App() {
     updateHide(1, false);
     updateHide(2, true);
     updateHide(0, true);
-    setType(marvel_T.sort((a, b) => a.timeline - b.timeline));
+
+    handleSettingType();
   }
 
   //sorts cards in chronological order
@@ -171,10 +188,10 @@ function App() {
     updateHide(0, true);
     console.log("current setting: CR");
 
+    sessionStorage.removeItem("Set_Type:");
+    sessionStorage.setItem("Set_Type:", "CR");
     sessionStorage.setItem("Starter_Page", true)
     updateHide(4, false);  
-
-
   }
 
   //sorts cards in release date order
@@ -191,10 +208,11 @@ function App() {
     updateHide(0, true);
     console.log("current setting: RD");
 
+    sessionStorage.removeItem("Set_Type:");
+    sessionStorage.setItem("Set_Type:", "RD");
     sessionStorage.setItem("Starter_Page", true)
     updateHide(4, false);  
 
-  
   } 
 
   //scroll wheel through timeline
