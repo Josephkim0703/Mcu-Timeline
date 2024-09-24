@@ -7,20 +7,18 @@ import Remote from "./util/Remote.jsx";
 import MissMinute from "./util/MissMinute.jsx";
 import { marvel_T } from "./util/data.js";
 
-//remote design
-//remote movement
-//timeline design
-//screen adaptiveness when shrinking page down
-//functionality when clicking on the buttons
+//shows cards when clicking on the top buttons make remote come up to choose option
+//mis miunte in the beginning explaining the website local storage to show once
 
 function App() {
+  const [background, setBackground] = useState(tva);
+
   const [cards, setCards] = useState([]);
   const [cards2, setCards2] = useState([]);
   const [type, setType] = useState([]);
   const [status, setStatus] = useState();
 
   const [AdaptiveNum, setAdaptiveNum] = useState(8);
-  const [width, setWidth] = useState();
 
   const [left, setLeft] = useState(0);
   const [right, setRight] = useState(AdaptiveNum);
@@ -30,26 +28,12 @@ function App() {
   const [ArrLength, setArrLength] = useState();
   const [minArrLength, setminArrLength] = useState();
 
+
   //equation for handling the length of the split array
   function handleLength(x) {
     const length = Math.ceil(x.length / 2);
     setArrLength(length);
     setminArrLength(length - AdaptiveNum);
-  }
-
-  //when remote is clicked saves input in session storage for header button access
-  function handleSettingType() {
-    const typeStorage = sessionStorage.getItem("Set_Type:");
-
-    if (typeStorage === "CR") {
-      updateHide(1, false);
-      updateHide(2, true);
-      setType(marvel_T.sort((a, b) => a.timeline - b.timeline));
-    } else if (typeStorage === "RD") {
-      updateHide(1, true);
-      updateHide(2, false);
-      setType(marvel_T.sort((a, b) => a.releaseDate - b.releaseDate));
-    }
   }
 
   //reset page function
@@ -145,36 +129,33 @@ function App() {
     ButtonTv();
     setLeft(0);
     setRight(AdaptiveNum);
-
+   
     updateHide(1, false);
     updateHide(2, true);
     updateHide(0, true);
-
-    handleSettingType();
+    setType(marvel_T.sort((a, b) => a.timeline - b.timeline));
   }
 
   function ButtonMvReset() {
     ButtonMovie();
     setLeft(0);
     setRight(AdaptiveNum);
-
+   
     updateHide(1, false);
     updateHide(2, true);
     updateHide(0, true);
-
-    handleSettingType();
+    setType(marvel_T.sort((a, b) => a.timeline - b.timeline));
   }
 
   function ButtonAllReset() {
     ButtonAll();
     setLeft(0);
     setRight(AdaptiveNum);
-
+   
     updateHide(1, false);
     updateHide(2, true);
     updateHide(0, true);
-
-    handleSettingType();
+    setType(marvel_T.sort((a, b) => a.timeline - b.timeline));
   }
 
   //sorts cards in chronological order
@@ -191,10 +172,10 @@ function App() {
     updateHide(0, true);
     console.log("current setting: CR");
 
-    sessionStorage.removeItem("Set_Type:");
-    sessionStorage.setItem("Set_Type:", "CR");
-    sessionStorage.setItem("Starter_Page", true);
-    updateHide(4, false);
+    sessionStorage.setItem("Starter_Page", true)
+    updateHide(4, false);  
+
+    remoteRef.current.classList.add();
   }
 
   //sorts cards in release date order
@@ -211,11 +192,11 @@ function App() {
     updateHide(0, true);
     console.log("current setting: RD");
 
-    sessionStorage.removeItem("Set_Type:");
-    sessionStorage.setItem("Set_Type:", "RD");
-    sessionStorage.setItem("Starter_Page", true);
-    updateHide(4, false);
-  }
+    sessionStorage.setItem("Starter_Page", true)
+    updateHide(4, false);  
+
+    remoteRef.current.classList.add(tiltAway);
+  } 
 
   //scroll wheel through timeline
   useEffect(() => {
@@ -236,7 +217,7 @@ function App() {
     };
   }, [minArrLength, ArrLength]);
 
-  // handles arrow keys clicks for keyboard instead of mouse scroll
+// handles arrow keys clicks for keyboard instead of mouse scroll
   useEffect(() => {
     function handleClick(e) {
       if (e.keyCode === 38 || e.keyCode === 39 || e.keyCode === 65) {
@@ -266,31 +247,16 @@ function App() {
     }
   }, [type, left, right]);
 
-  //screen width adaptiveness shrink number of cards
-  useEffect(() => {
-    setWidth(window.innerWidth);
-
-    setTimeout(() => {
-      if (width <= 1500) {
-        setAdaptiveNum(6);
-      } else {
-        setAdaptiveNum(8);
-      }
-    }, 0);
-      
-    console.log(width);
-  }, [window.innerWidth]);
-
-  //save on session storage for miss minute
   useEffect(() => {
     updateHide(4, true);
 
     const complete = sessionStorage.getItem("Starter_Page");
 
-    if (complete === "true") {
+    if(complete === "true") {
       updateHide(4, false);
     }
-  }, []);
+  
+  },[])
 
   return (
     <>
@@ -301,13 +267,8 @@ function App() {
         buttonAll={ButtonAllReset}
       />
       <main>
-<<<<<<< HEAD
         {hide[4] && (<MissMinute/>)} 
       
-=======
-        {hide[4] && <MissMinute />}
-
->>>>>>> dd8f67085ef012fac3c58e9ba4689c78017608ac
         <Remote ButtonC={ButtonCR} ButtonR={ButtonRD} />
 
         {hide[0] && (
@@ -331,7 +292,7 @@ function App() {
           </div>
         )}
 
-        <img src={tva} alt="" id="background" />
+        <img src={background} alt="" id="background" />
       </main>
     </>
   );
