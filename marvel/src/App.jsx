@@ -12,6 +12,7 @@ import { marvel_T } from "./util/data.js";
 //timeline design
 //screen adaptiveness when shrinking page down
 //functionality when clicking on the buttons
+//when hovering over a
 
 function App() {
 
@@ -30,6 +31,10 @@ function App() {
 
   const [ArrLength, setArrLength] = useState();
   const [minArrLength, setminArrLength] = useState();
+
+  const [hover, setHover] = useState(null);
+
+  
 
   //equation for handling the length of the split array
   function handleLength(x) {
@@ -86,6 +91,7 @@ function App() {
         image: element.image,
         time: element.time,
         date: element.date,
+        name: element.name,
       }));
 
     const top = x.filter((_, index) => index % 2 === 0).slice(left, right);
@@ -105,6 +111,7 @@ function App() {
         image: element.image,
         time: element.time,
         date: element.date,
+        name: element.name,
       }));
 
     const top = x.filter((_, index) => index % 2 === 0).slice(left, right);
@@ -124,6 +131,7 @@ function App() {
         image: char.image,
         time: char.time,
         date: char.date,
+        name: char.name,
       }));
 
     const bottom = type
@@ -133,6 +141,7 @@ function App() {
         image: char.image,
         time: char.time,
         date: char.date,
+        name: char.name,
       }));
 
     handleLength(type);
@@ -320,6 +329,7 @@ function App() {
               cards={cards.map((card) => card.image)}
               date={cards.map((card) => card.date)}
               time={cards.map((card) => card.time)}
+              name={cards.map((card) => card.name)}
               id="top_list"
             />
             <Card
@@ -328,6 +338,7 @@ function App() {
               cards={cards2.map((card) => card.image)}
               date={cards2.map((card) => card.date)}
               time={cards2.map((card) => card.time)}
+              name={cards2.map((card) => card.name)}
               id="bottom_list"
             />
           </div>

@@ -39,15 +39,24 @@
   font-family: "thunder", "times New", "Times New Roman";
 }
 
+#card h2 {
+  position: absolute;
+  font-size: 1rem;
+  font-family: "thunder", "times New", "Times New Roman";
+  width: 11rem;
+  text-align: center;
+  margin: 0px 26px;
+}
+
 #card img:hover {
   border: 2px solid rgb(255, 255, 255);
 }
 
 #timeline {
   width: 100vw;
-  height: 35rem;
+  height: 38rem;
   position: absolute;
-  top: 25%;
+  top: 24%;
   left: 0;
   z-index: 2;
   border: 5px solid white;
@@ -62,6 +71,13 @@
   margin-top: -13rem;
 }
 
+#timeline > :nth-child(2) h2 {
+  margin-top: 11.5rem;
+}
+
+#timeline > :nth-child(1) h2 {
+  margin-top: -16rem;
+}
 @media only screen and (max-height: 900px) {
   #timeline {
     height: 30.5rem;

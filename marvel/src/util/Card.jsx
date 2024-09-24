@@ -11,7 +11,8 @@ function Card(props) {
           <div key={index}>
             <img src={image} />   
             {props.hide1 && (<h1>{props.date[index]}</h1>)}                  
-            {props.hide2 && (<h1>{props.time[index]}</h1>)}   
+            {props.hide2 && (<h1>{props.time[index]}</h1>)} 
+            <h2 id="cards_name">{props.name[index]}</h2>  
           </div>
         ))}
       </div>
