@@ -19,9 +19,9 @@ function App() {
   const [cards2, setCards2] = useState([]);
   const [type, setType] = useState([]);
   const [status, setStatus] = useState();
-
-  const [AdaptiveNum, setAdaptiveNum] = useState(8);
+  
   const [width, setWidth] = useState();
+  const [AdaptiveNum, setAdaptiveNum] = useState(8);
 
   const [left, setLeft] = useState(0);
   const [right, setRight] = useState(AdaptiveNum);
@@ -240,10 +240,10 @@ function App() {
   // handles arrow keys clicks for keyboard instead of mouse scroll
   useEffect(() => {
     function handleClick(e) {
-      if (e.keyCode === 38 || e.keyCode === 39 || e.keyCode === 65) {
+      if (e.keyCode === 38 || e.keyCode === 39 || e.keyCode === 68) {
         setLeft((prevLeft) => Math.min(prevLeft + 1, minArrLength));
         setRight((prevRight) => Math.min(prevRight + 1, ArrLength));
-      } else if (e.keyCode === 40 || e.keyCode === 37 || e.keyCode === 68) {
+      } else if (e.keyCode === 40 || e.keyCode === 37 || e.keyCode === 65) {
         setLeft((prevLeft) => Math.max(prevLeft - 1, 0));
         setRight((prevRight) => Math.max(prevRight - 1, AdaptiveNum));
       }
@@ -256,7 +256,7 @@ function App() {
     };
   }, [minArrLength, ArrLength]);
 
-  //updates timeline for scrolling
+  //updates timeline cards
   useEffect(() => {
     if (status === "show") {
       ButtonTv();
@@ -269,18 +269,23 @@ function App() {
 
   //screen width adaptiveness shrink number of cards
   useEffect(() => {
-    setWidth(window.innerWidth);
+    const handleResize = () => {
 
-    setTimeout(() => {
-      if (width <= 1500) {
-        setAdaptiveNum(6);
-      } else {
-        setAdaptiveNum(8);
-      }
-    }, 0);
-      
-    console.log(width);
-  }, [window.innerWidth]);
+      setWidth(window.innerWidth);
+    };
+
+    if (width <= 1470 && width >= 1425) {
+      setAdaptiveNum(6);
+    } else if(width > 1470){
+      setAdaptiveNum(8);
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [width]);
 
   //save on session storage for miss minute
   useEffect(() => {
