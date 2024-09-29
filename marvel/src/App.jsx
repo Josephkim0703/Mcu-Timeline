@@ -15,12 +15,11 @@ import { marvel_T } from "./util/data.js";
 //when hovering over a
 
 function App() {
-
   const [cards, setCards] = useState([]);
   const [cards2, setCards2] = useState([]);
   const [type, setType] = useState([]);
   const [status, setStatus] = useState();
-  
+
   const [width, setWidth] = useState();
   const [AdaptiveNum, setAdaptiveNum] = useState(8);
 
@@ -32,9 +31,7 @@ function App() {
   const [ArrLength, setArrLength] = useState();
   const [minArrLength, setminArrLength] = useState();
 
-  const [hover, setHover] = useState(null);
-
-  
+  const originalMarvelT = useRef([...marvel_T]);
 
   //equation for handling the length of the split array
   function handleLength(x) {
@@ -50,7 +47,7 @@ function App() {
     if (typeStorage === "CR") {
       updateHide(1, false);
       updateHide(2, true);
-      setType(marvel_T.sort((a, b) => a.timeline - b.timeline));
+      setType([...originalMarvelT.current]);
     } else if (typeStorage === "RD") {
       updateHide(1, true);
       updateHide(2, false);
@@ -192,7 +189,7 @@ function App() {
     setTimeout(() => {
       set();
       setTimeout(() => {
-        setType(marvel_T.sort((a, b) => a.timeline - b.timeline));
+        setType([...originalMarvelT.current]);
       }, 0);
     }, 0);
 
@@ -279,20 +276,19 @@ function App() {
   //screen width adaptiveness shrink number of cards
   useEffect(() => {
     const handleResize = () => {
-
       setWidth(window.innerWidth);
     };
 
     if (width <= 1470 && width >= 1425) {
       setAdaptiveNum(6);
-    } else if(width > 1470){
+    } else if (width > 1470) {
       setAdaptiveNum(8);
     }
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, [width]);
 
@@ -316,9 +312,8 @@ function App() {
         buttonAll={ButtonAllReset}
       />
       <main>
+        {hide[4] && <MissMinute />}
 
-        {hide[4] && (<MissMinute/>)} 
-      
         <Remote ButtonC={ButtonCR} ButtonR={ButtonRD} />
 
         {hide[0] && (

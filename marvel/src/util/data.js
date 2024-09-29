@@ -773,9 +773,18 @@ const marvel_T = [
         type: "movie",
         time: "2026"
     },
+    {
+        releaseDate : 80,
+        timeline: 78,
+        name: "Agatha All along",
+        date: "September 2024",
+        image: whatif2,
+        type: "show",
+        time: "2026"
+    },
     { 
         releaseDate : 57,
-        timeline: 78,
+        timeline: 998,
         name: "What If...?",
         date: "Aug 2021 – Oct 2021",
         image: whatif,
@@ -784,7 +793,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 77,
-        timeline: 79,
+        timeline: 999,
         name: "What If...? season 2",
         date: "December 2023",
         image: whatif2,
@@ -802,4 +811,6 @@ const marvel_T = [
     }
 ];
 
+//timeline current: 78
+//releaseDate current: 80
 export {marvel_T};
