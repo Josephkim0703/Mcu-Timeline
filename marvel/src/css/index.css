@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 0;
   cursor: grab;
+  background-color: #42b5bb;
 }
 
 h1,
@@ -33,8 +34,8 @@ button {
 
 #background {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 1920px;
+  height: 1080px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

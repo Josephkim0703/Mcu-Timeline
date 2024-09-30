@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import "./css/index.css";
 import tva from "./assets/background/tva.jpg";
+import timeline from "./assets/background/timeline.png";
 import Card from "./util/Card.jsx";
 import Header from "./util/Header.jsx";
 import Remote from "./util/Remote.jsx";
@@ -15,6 +16,8 @@ import { marvel_T } from "./util/data.js";
 //when hovering over a
 
 function App() {
+  
+  const [background, setBackground] = useState(tva);
   const [cards, setCards] = useState([]);
   const [cards2, setCards2] = useState([]);
   const [type, setType] = useState([]);
@@ -60,6 +63,7 @@ function App() {
     updateHide(0, false);
     ButtonAll();
     set();
+    setBackground(tva);
   }
 
   //clean up function
@@ -193,6 +197,7 @@ function App() {
       }, 0);
     }, 0);
 
+    setBackground(timeline);
     updateHide(1, false);
     updateHide(2, true);
     updateHide(0, true);
@@ -213,6 +218,7 @@ function App() {
       }, 0);
     }, 0);
 
+    setBackground(timeline);
     updateHide(1, true);
     updateHide(2, false);
     updateHide(0, true);
@@ -285,6 +291,14 @@ function App() {
       setAdaptiveNum(8);
     }
 
+    if(width >=2100 && width <= 2339) {
+      setAdaptiveNum(9);
+    } else if(width >= 2340 && width <= 2599) {
+      setAdaptiveNum(10);
+    } else if(width >= 2600) {
+      setAdaptiveNum(11);
+    }
+
     window.addEventListener("resize", handleResize);
 
     return () => {
@@ -327,6 +341,7 @@ function App() {
               name={cards.map((card) => card.name)}
               id="top_list"
             />
+            
             <Card
               hide1={hide[1]}
               hide2={hide[2]}
@@ -339,7 +354,7 @@ function App() {
           </div>
         )}
 
-        <img src={tva} alt="" id="background" />
+        <img src={background} alt="" id="background" />
       </main>
     </>
   );

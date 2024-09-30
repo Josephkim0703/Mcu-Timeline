@@ -37,11 +37,13 @@
 #card h1 {
   font-size: 1rem;
   font-family: "thunder", "times New", "Times New Roman";
+  color: white;
 }
 
 #card h2 {
+  color: white;
   position: absolute;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-family: "thunder", "times New", "Times New Roman";
   width: 11rem;
   text-align: center;
@@ -55,16 +57,32 @@
 #timeline {
   width: 100vw;
   height: 38rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   position: absolute;
-  top: 24%;
-  left: 0;
   z-index: 2;
-  border: 5px solid white;
+  border: 0px;
+}
+
+#timeline > :nth-child(1) {
+  top: 25%;
+  left: 47%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+#timeline > :nth-child(1) h2 {
+  margin-top: -15.5rem;
 }
 
 #timeline > :nth-child(2) {
-  margin-left: 95px;
+  margin-left: 55px;
   margin-top: 10rem;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
 }
 
 #timeline > :nth-child(2) h1 {
@@ -75,22 +93,27 @@
   margin-top: 11.5rem;
 }
 
-#timeline > :nth-child(1) h2 {
-  margin-top: -16rem;
-}
+
 @media only screen and (max-height: 900px) {
   #timeline {
     height: 30.5rem;
-    top: 20%;
   }
 
   #timeline > :nth-child(2) {
-    margin-left: 90px;
+    margin-left: 50px;
     margin-top: 8rem;
   }
-  
+
   #timeline > :nth-child(2) h1 {
     margin-top: -11.5rem;
+  }
+
+  #timeline > :nth-child(2) h2 {
+    margin-top: 10.5rem;
+  }
+
+  #timeline > :nth-child(1) h2 {
+    margin-top: -14rem;
   }
 
   #card img {
@@ -98,8 +121,13 @@
     height: 9rem;
     margin: 5px 55px;
   }
-  
+
   #card h1 {
     font-size: 0.8rem;
+  }
+
+  #card h2 {
+    font-size: 0.8rem;
+    margin: 0px 19px;
   }
 }

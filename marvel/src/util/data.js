@@ -77,7 +77,9 @@ import werewolf from '../assets/cards/werewolf.jpg';
 import secret from '../assets/cards/secret_invasion.jpg';
 import echo from '../assets/cards/echo.jpg';
 import deadpool from '../assets/cards/deadpool.jpg';
+import agatha from '../assets/cards/agatha.jpg';
 import comingSoon from '../assets/cards/marvel.jpg';
+
 
 const marvel_T = [
     { 
@@ -546,7 +548,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 58,
-        name: "Shang-Chi and the Legend of the Ten Rings",
+        name: "Shang-Chi the Legend of the Ten Rings",
         date: "September 2021",
         image: shangchi,
         type: "movie",
@@ -586,7 +588,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 63,
-        name: "Doctor Strange in the Multiverse of Madness",
+        name: "Doctor Strange the Multiverse of Madness",
         date: "May 2022",
         image: doctorStrange2,
         type: "movie",
@@ -674,7 +676,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 70,
-        name: "The Guardians of the Galaxy Holiday Special",
+        name: "Guardians of the Galaxy Holiday Special",
         date: "November 2022",
         image: gotg_special,
         type: "show",
@@ -690,7 +692,7 @@ const marvel_T = [
     },
     { 
         releaseDate : 71,
-        name: "Ant-Man and The Wasp: Quantumania",
+        name: "Ant-Man The Wasp: Quantumania",
         date: "February 2023",
         image: antman3,
         type: "movie",
@@ -700,7 +702,7 @@ const marvel_T = [
         releaseDate : 80,
         name: "Agatha All along",
         date: "September 2024",
-        image: whatif2,
+        image: agatha,
         type: "show",
         time: "2026"
     },
