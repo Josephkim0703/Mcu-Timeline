@@ -278,7 +278,7 @@ function App() {
     } else {
       ButtonAll();
     }
-  }, [type, left, right]);
+  }, [type, left, right, AdaptiveNum, status]);
 
   //screen width adaptiveness shrink number of cards
   useEffect(() => {
@@ -287,7 +287,7 @@ function App() {
       console.log(newWidth);
 
       if (newWidth <= 760) {
-        setAdaptiveNum(2);
+        setAdaptiveNum(2);;
       } else if (newWidth <= 1000) {
         setAdaptiveNum(3);
       } else if (newWidth <= 1220) {
@@ -308,17 +308,21 @@ function App() {
         setAdaptiveNum(11);
       } else if (newWidth <= 3000) {
         setAdaptiveNum(12);
-      }
+      }   
     };
-
+  
     handleResize();
-
+  
     window.addEventListener("resize", handleResize);
-
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [AdaptiveNum]);
+
+  useEffect(() => {
+    setLeft(0);
+    setRight(AdaptiveNum);
+  }, [AdaptiveNum]);
 
   //save on session storage for miss minute
   useEffect(() => {
