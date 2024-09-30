@@ -16,14 +16,15 @@ import { marvel_T } from "./util/data.js";
 //when hovering over a
 
 function App() {
-  
+
+  const originalMarvelT = useRef([...marvel_T]);
+
   const [background, setBackground] = useState(tva);
   const [cards, setCards] = useState([]);
   const [cards2, setCards2] = useState([]);
   const [type, setType] = useState([]);
   const [status, setStatus] = useState();
 
-  const [width, setWidth] = useState();
   const [AdaptiveNum, setAdaptiveNum] = useState(8);
 
   const [left, setLeft] = useState(0);
@@ -34,7 +35,7 @@ function App() {
   const [ArrLength, setArrLength] = useState();
   const [minArrLength, setminArrLength] = useState();
 
-  const originalMarvelT = useRef([...marvel_T]);
+
 
   //equation for handling the length of the split array
   function handleLength(x) {
@@ -282,29 +283,42 @@ function App() {
   //screen width adaptiveness shrink number of cards
   useEffect(() => {
     const handleResize = () => {
-      setWidth(window.innerWidth);
+      const newWidth = window.innerWidth;
+      console.log(newWidth);
+
+      if (newWidth <= 760) {
+        setAdaptiveNum(2);
+      } else if (newWidth <= 1000) {
+        setAdaptiveNum(3);
+      } else if (newWidth <= 1220) {
+        setAdaptiveNum(4);
+      } else if (newWidth <= 1450) {
+        setAdaptiveNum(5);
+      } else if (newWidth <= 1650) {
+        setAdaptiveNum(6);
+      } else if (newWidth <= 1900) {
+        setAdaptiveNum(7);
+      } else if (newWidth <= 2120) {
+        setAdaptiveNum(8);
+      } else if (newWidth <= 2350) {
+        setAdaptiveNum(9);
+      } else if (newWidth <= 2600) {
+        setAdaptiveNum(10);
+      } else if (newWidth <= 2800) {
+        setAdaptiveNum(11);
+      } else if (newWidth <= 3000) {
+        setAdaptiveNum(12);
+      }
     };
 
-    if (width <= 1470 && width >= 1425) {
-      setAdaptiveNum(6);
-    } else if (width > 1470) {
-      setAdaptiveNum(8);
-    }
-
-    if(width >=2100 && width <= 2339) {
-      setAdaptiveNum(9);
-    } else if(width >= 2340 && width <= 2599) {
-      setAdaptiveNum(10);
-    } else if(width >= 2600) {
-      setAdaptiveNum(11);
-    }
+    handleResize();
 
     window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [width]);
+  }, []);
 
   //save on session storage for miss minute
   useEffect(() => {
@@ -341,7 +355,7 @@ function App() {
               name={cards.map((card) => card.name)}
               id="top_list"
             />
-            
+
             <Card
               hide1={hide[1]}
               hide2={hide[2]}

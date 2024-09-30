@@ -722,14 +722,14 @@ const marvel_T = [
         type: "show",
         time: "Multiverse"
     },
-    { 
+   /* { 
         releaseDate : 1000,
         name: "Coming Soon...",
         date: "Coming Soon...",
         image: comingSoon,
         type: "?",
         time: "Coming Soon..."
-    }
+    }*/
 ];
 
 //releaseDate current: 80
