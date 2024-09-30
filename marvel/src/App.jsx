@@ -16,7 +16,6 @@ import { marvel_T } from "./util/data.js";
 //when hovering over a
 
 function App() {
-
   const originalMarvelT = useRef([...marvel_T]);
 
   const [background, setBackground] = useState(tva);
@@ -34,8 +33,6 @@ function App() {
 
   const [ArrLength, setArrLength] = useState();
   const [minArrLength, setminArrLength] = useState();
-
-
 
   //equation for handling the length of the split array
   function handleLength(x) {
@@ -286,7 +283,7 @@ function App() {
       const newWidth = window.innerWidth;
 
       if (newWidth <= 760) {
-        setAdaptiveNum(2);;
+        setAdaptiveNum(2);
       } else if (newWidth <= 1000) {
         setAdaptiveNum(3);
       } else if (newWidth <= 1220) {
@@ -307,11 +304,19 @@ function App() {
         setAdaptiveNum(11);
       } else if (newWidth <= 3000) {
         setAdaptiveNum(12);
-      }   
+      } else if (newWidth <= 3200) {
+        setAdaptiveNum(13);
+      } else if (newWidth <= 3420) {
+        setAdaptiveNum(14);
+      } else if (newWidth <= 3650) {
+        setAdaptiveNum(15);
+      } else if (newWidth <= 3900) {
+        setAdaptiveNum(16);
+      }
     };
-  
+
     handleResize();
-  
+
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
