@@ -278,13 +278,12 @@ function App() {
     } else {
       ButtonAll();
     }
-  }, [type, left, right, AdaptiveNum, status]);
+  }, [type, left, right]);
 
   //screen width adaptiveness shrink number of cards
   useEffect(() => {
     const handleResize = () => {
       const newWidth = window.innerWidth;
-      console.log(newWidth);
 
       if (newWidth <= 760) {
         setAdaptiveNum(2);;
@@ -319,6 +318,7 @@ function App() {
     };
   }, [AdaptiveNum]);
 
+  //For the DOM to update and AdaptiveNum to Change I need to first reset left and right
   useEffect(() => {
     setLeft(0);
     setRight(AdaptiveNum);
