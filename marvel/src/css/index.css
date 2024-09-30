@@ -3,7 +3,6 @@ body {
   margin: 0;
   padding: 0;
   cursor: grab;
-  background-color: #42b5bb;
 }
 
 h1,
@@ -40,8 +39,6 @@ button {
   left: 0;
   z-index: 0;
   background-repeat: repeat;
-  background-size: auto;
-  background-color: transparent;
 }
 
 header {
