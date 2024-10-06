@@ -10,8 +10,6 @@ import { marvel_T } from "./util/data.js";
 
 //remote design
 //remote movement
-//timeline design
-//screen adaptiveness when shrinking page down
 //functionality when clicking on the buttons
 //when hovering over a
 
