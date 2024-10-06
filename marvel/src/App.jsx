@@ -11,7 +11,8 @@ import { marvel_T } from "./util/data.js";
 //remote design
 //remote movement
 //functionality when clicking on the buttons
-//when hovering over a
+//add a transition from tv to timeline
+//fix background 
 
 function App() {
   const originalMarvelT = useRef([...marvel_T]);
