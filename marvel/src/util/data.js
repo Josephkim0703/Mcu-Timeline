@@ -1,4 +1,3 @@
-
 const marvel_T = [
     { 
         releaseDate : 5,
@@ -650,6 +649,5 @@ const marvel_T = [
         time: "Coming Soon..."
     }*/
 ];
-
 //releaseDate current: 80
 export {marvel_T};

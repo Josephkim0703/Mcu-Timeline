@@ -1,7 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 import "./css/index.css";
-import tva from "./assets/background/tva.jpg";
-import timeline from "./assets/background/timeline.png";
 import Card from "./util/Card.jsx";
 import Header from "./util/Header.jsx";
 import Remote from "./util/Remote.jsx";
@@ -16,6 +14,9 @@ import { marvel_T } from "./util/data.js";
 
 function App() {
   const originalMarvelT = useRef([...marvel_T]);
+
+  const tva = `public/assets/background/tva.jpg`;
+  const timeline = `public/assets/background/timeline.png`;
 
   const [background, setBackground] = useState(tva);
   const [cards, setCards] = useState([]);
